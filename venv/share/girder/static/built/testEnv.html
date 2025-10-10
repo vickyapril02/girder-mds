@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Girder test environment</title>
+    <link href="/static/built/girder_lib.min.css" rel="stylesheet" type="text/css">
+    <link href="/static/built/testing/testing.min.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="hide" id="g-global-info-apiroot">%HOST%/api/v1</div>
+    <script src="/static/built/girder_lib.min.js"></script>
+    <script src="/static/built/girder_app.min.js"></script>
+    <script src="/static/built/testing.min.js"></script>
+    <script type="text/javascript">
+      (function () {
+        var consoleReporter = new jasmine.ConsoleReporter();
+      
+        window.jasmine_phantom_reporter = consoleReporter;
+        jasmine.getEnv().addReporter(consoleReporter);
+      
+        girder.utilities.eventStream.settings.timeout = 10;
+      })();
+    </script>
+  </body>
+</html>

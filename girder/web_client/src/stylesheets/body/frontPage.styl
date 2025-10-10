@@ -1,48 +1,208 @@
-.g-frontpage-header
-  padding 5px
+// When landing page is active, hide global chrome
+.g-landing-page-active
+  #g-app-header-container,
+  #g-global-nav-container,
+  #g-app-footer-container
+    display none !important
 
-  .g-frontpage-title-container
-    display inline-block
-    margin-left 12px
+  .g-quick-search-form,
+  .g-current-user-wrapper
+    display none !important
 
-    .g-frontpage-title
-      font-weight bold
-      font-size 34px
-      color #222
+// Medical theme CSS variables
+:root
+  --medical-primary #d32f2f
+  --medical-secondary #1976d2
+  --medical-accent #00796b
+  --medical-light #f8f9fa
+  --medical-dark #2c3e50
+  --medical-success #4caf50
+  --medical-warning #ff9800
 
-    .g-frontpage-subtitle
-      font-size 18px
-      color #707070
-      margin-left 2px
-      border-top 1px solid #eee
+.g-landing
+  max-width 1400px
+  margin 0 auto
+  padding 20px
+  background linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 100%)
+  min-height 100vh
+  font-family 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 
-  .g-frontpage-logo-container
-    position relative
-    display inline-block
-    vertical-align top
-    width 82px
-    height 82px
+  .g-landing-header
+    display flex
+    justify-content space-between
+    align-items center
+    margin-bottom 40px
+    padding 20px 30px
+    background #fff
+    border-radius 16px
+    box-shadow 0 4px 20px rgba(0,0,0,0.08)
 
-    .g-frontpage-logo
-      max-width 82px
-      max-height 82px
-      // absolute allows top / transform to work
-      position absolute
-      // center image vertically and horizontally
-      left 50%
-      top 50%
-      transform translate(-50%, -50%)
+    .g-brand
+      display flex
+      align-items center
+      gap 15px
 
-.g-frontpage-body
-  padding 12px 12px 0
-  margin-top 10px
+      .g-logo
+        .g-heart-logo
+          font-size 48px
+          color var(--medical-primary)
+          text-shadow 0 2px 4px rgba(211,47,47,0.3)
 
-  border-radius 2px
-  background-color #f8f8f8
-  border 1px solid #e5e5e5
-  color #555
+      .g-title
+        font-size 18px
+        font-weight 600
+        color var(--medical-dark)
+        line-height 1.4
+        max-width 600px
 
-  .g-frontpage-paragraph
-    margin-top 0
-    margin-bottom 18px
-    font-size 14px
+    .g-auth
+      display flex
+      gap 12px
+
+      .g-link
+        background var(--medical-primary)
+        color white
+        border none
+        border-radius 8px
+        padding 12px 24px
+        cursor pointer
+        font-weight 600
+        font-size 14px
+        box-shadow 0 2px 8px rgba(211,47,47,0.3)
+        transition all 0.3s ease
+
+        &:hover
+          background #b71c1c
+          transform translateY(-2px)
+          box-shadow 0 4px 12px rgba(211,47,47,0.4)
+
+  .g-landing-hero
+    background linear-gradient(135deg, var(--medical-primary) 0%, var(--medical-secondary) 100%)
+    color white
+    border-radius 20px
+    padding 80px 40px
+    text-align center
+    box-shadow 0 12px 40px rgba(211,47,47,0.25)
+    margin-bottom 40px
+
+    .g-hero-title
+      font-size 56px
+      font-weight 700
+      margin-bottom 20px
+      letter-spacing -0.5px
+      text-shadow 0 2px 4px rgba(0,0,0,0.1)
+
+    .g-hero-subtitle
+      font-size 22px
+      opacity 0.95
+      max-width 800px
+      margin 0 auto
+      line-height 1.4
+
+  .g-landing-content
+    .g-section
+      margin-bottom 50px
+      background #fff
+      border-radius 16px
+      padding 40px
+      box-shadow 0 8px 32px rgba(0,0,0,0.06)
+      border 1px solid rgba(211,47,47,0.1)
+
+      .g-section-header
+        display flex
+        align-items center
+        gap 15px
+        margin-bottom 30px
+
+        .g-section-icon
+          font-size 28px
+
+        .g-section-title
+          font-size 28px
+          font-weight 700
+          color var(--medical-dark)
+          margin 0
+
+      .g-section-content
+        .g-project-description
+          p
+            font-size 18px
+            line-height 1.7
+            color #555
+            margin-bottom 30px
+
+          .g-features-grid
+            display grid
+            grid-template-columns repeat(auto-fit, minmax(280px, 1fr))
+            gap 25px
+            margin-top 30px
+
+            .g-feature
+              background #f8f9fa
+              padding 25px
+              border-radius 12px
+              text-align center
+              border 1px solid rgba(211,47,47,0.1)
+              transition all 0.3s ease
+
+              &:hover
+                transform translateY(-4px)
+                box-shadow 0 8px 25px rgba(0,0,0,0.1)
+
+              .g-feature-icon
+                font-size 36px
+                margin-bottom 15px
+
+              .g-feature-title
+                font-size 18px
+                font-weight 600
+                color var(--medical-dark)
+                margin-bottom 10px
+
+              .g-feature-desc
+                font-size 14px
+                color #666
+                line-height 1.5
+
+        .g-gallery
+          display grid
+          grid-template-columns repeat(auto-fit, minmax(250px, 1fr))
+          gap 20px
+
+          .g-photo
+            background linear-gradient(135deg, var(--medical-light) 0%, #e3f2fd 100%)
+            border-radius 12px
+            padding 40px
+            text-align center
+            border 2px solid rgba(211,47,47,0.1)
+            transition all 0.3s ease
+
+            &:hover
+              transform translateY(-4px)
+              box-shadow 0 8px 25px rgba(0,0,0,0.1)
+
+            .g-photo-placeholder
+              font-size 16px
+              font-weight 600
+              color var(--medical-dark)
+
+        .g-company-info
+          p
+            font-size 18px
+            line-height 1.7
+            color #555
+            margin-bottom 30px
+
+          .g-contact-info
+            background #f8f9fa
+            padding 25px
+            border-radius 12px
+            border 1px solid rgba(211,47,47,0.1)
+
+            .g-contact-item
+              font-size 16px
+              margin-bottom 10px
+              color var(--medical-dark)
+
+              strong
+                color var(--medical-primary)
