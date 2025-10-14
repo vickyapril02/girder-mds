@@ -1,0 +1,158 @@
+// Enhanced folder list with dropdown functionality
+.g-folder-list
+  .g-folder-list-entry
+    position relative
+    
+    .g-folder-dropdown-toggle
+      position absolute
+      left 0
+      top 50%
+      transform translateY(-50%)
+      width 20px
+      height 20px
+      padding 0
+      border none
+      background none
+      color #666
+      cursor pointer
+      display flex
+      align-items center
+      justify-content center
+      z-index 2
+      transition all 0.2s ease
+      
+      &:hover
+        color #333
+        background rgba(0,0,0,0.05)
+        border-radius 3px
+      
+      i
+        font-size 12px
+        transition transform 0.2s ease
+      
+      &.expanded i
+        transform rotate(90deg)
+    
+    .g-folder-list-link
+      padding-left 25px
+      display block
+      text-decoration none
+      color #333
+      
+      &:hover
+        text-decoration none
+        color #007bff
+    
+    .g-folder-privacy
+      margin-left 25px
+      font-size 12px
+      color #666
+
+  // Children containers with indentation
+  .g-folder-children
+    margin-left 20px
+    border-left 1px solid #e0e0e0
+    padding-left 10px
+    margin-top 5px
+    
+    .g-folder-child-entry
+      position relative
+      margin-bottom 3px
+      
+      .g-folder-dropdown-toggle
+        left 0
+      
+      .g-folder-list-link
+        padding-left 25px
+      
+      .g-folder-privacy
+        margin-left 25px
+
+  .g-folder-grandchildren
+    margin-left 20px
+    border-left 1px solid #e0e0e0
+    padding-left 10px
+    margin-top 5px
+    
+    .g-folder-grandchild-entry
+      position relative
+      margin-bottom 3px
+      
+      .g-folder-dropdown-toggle
+        left 0
+      
+      .g-folder-list-link
+        padding-left 25px
+      
+      .g-folder-privacy
+        margin-left 25px
+
+  .g-folder-great-grandchildren
+    margin-left 20px
+    border-left 1px solid #e0e0e0
+    padding-left 10px
+    margin-top 5px
+    
+    .g-folder-great-grandchild-entry
+      position relative
+      margin-bottom 3px
+      
+      .g-folder-list-link
+        padding-left 25px
+      
+      .g-folder-privacy
+        margin-left 25px
+
+// Loading state for dropdown arrows
+.g-folder-dropdown-toggle.loading
+  i
+    animation spin 1s linear infinite
+
+@keyframes spin
+  from
+    transform rotate(0deg)
+  to
+    transform rotate(360deg)
+
+// Hover effects
+.g-folder-list-entry:hover
+  background-color #f8f9fa
+
+.g-folder-child-entry:hover
+  background-color #f8f9fa
+
+.g-folder-grandchild-entry:hover
+  background-color #f8f9fa
+
+.g-folder-great-grandchild-entry:hover
+  background-color #f8f9fa
+
+// Dark theme support
+@media (prefers-color-scheme: dark)
+  .g-folder-list
+    .g-folder-dropdown-toggle
+      color #a0aec0
+      
+      &:hover
+        color #e2e8f0
+        background rgba(255,255,255,0.1)
+    
+    .g-folder-list-link
+      color #e2e8f0
+      
+      &:hover
+        color #63b3ed
+    
+    .g-folder-privacy
+      color #a0aec0
+    
+    .g-folder-children,
+    .g-folder-grandchildren,
+    .g-folder-great-grandchildren
+      border-color #4a5568
+    
+    .g-folder-list-entry:hover,
+    .g-folder-child-entry:hover,
+    .g-folder-grandchild-entry:hover,
+    .g-folder-great-grandchild-entry:hover
+      background-color #4a5568

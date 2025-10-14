@@ -10,6 +10,7 @@ import EditFolderWidget from '@girder/core/views/widgets/EditFolderWidget';
 import EditItemWidget from '@girder/core/views/widgets/EditItemWidget';
 import FolderInfoWidget from '@girder/core/views/widgets/FolderInfoWidget';
 import FolderListWidget from '@girder/core/views/widgets/FolderListWidget';
+import FolderDropdownWidget from './FolderDropdownWidget';
 import ItemListWidget from '@girder/core/views/widgets/ItemListWidget';
 import ItemModel from '@girder/core/models/ItemModel';
 import MetadataWidget from '@girder/core/views/widgets/MetadataWidget';
@@ -137,7 +138,11 @@ var HierarchyWidget = View.extend({
         'click a.g-delete-checked': 'deleteCheckedDialog',
         'click .g-list-checkbox': 'checkboxListener',
         'change .g-select-all': function (e) {
-            this.folderListView.checkAll(e.currentTarget.checked);
+            if (this._showDropdown) {
+                this.folderDropdownWidget.checkAll(e.currentTarget.checked);
+            } else {
+                this.folderListView.checkAll(e.currentTarget.checked);
+            }
 
             if (this.itemListView) {
                 this.itemListView.checkAll(e.currentTarget.checked);
@@ -185,6 +190,7 @@ var HierarchyWidget = View.extend({
         this._highlightItem = _.has(settings, 'highlightItem') ? settings.highlightItem : false;
         this._paginated = _.has(settings, 'paginated') ? settings.paginated : false;
         this._onFolderSelect = settings.onFolderSelect;
+        this._showDropdown = settings.showDropdown || false; // Show dropdown navigation
 
         this.folderAccess = settings.folderAccess;
         this.folderCreate = settings.folderCreate;
@@ -218,11 +224,20 @@ var HierarchyWidget = View.extend({
             checkboxes: this._checkboxes,
             parentView: this
         });
+
+        this.folderDropdownWidget = new FolderDropdownWidget({
+            folderFilter: this._itemFilter,
+            parentType: this.parentModel.resourceName,
+            parentId: this.parentModel.get('_id'),
+            checkboxes: this._checkboxes,
+            parentView: this
+        });
         this.folderListView.on('g:folderClicked', function (folder) {
             this.descend(folder);
 
             if (this.uploadWidget) {
-                this.uploadWidget.folder = folder;
+                this.uploadWidget.parent = folder;
+                this.uploadWidget.parentType = folder.resourceName;
             }
         }, this).off('g:checkboxesChanged')
             .on('g:checkboxesChanged', this.updateChecked, this)
@@ -230,6 +245,16 @@ var HierarchyWidget = View.extend({
                 this.folderCount = this.folderListView.collection.length;
                 this._childCountCheck();
             }, this);
+
+        this.folderDropdownWidget.on('g:folderClicked', function (folder) {
+            this.descend(folder);
+
+            if (this.uploadWidget) {
+                this.uploadWidget.parent = folder;
+                this.uploadWidget.parentType = folder.resourceName;
+            }
+        }, this).off('g:checkboxesChanged')
+            .on('g:checkboxesChanged', this.updateChecked, this);
 
         if (this.parentModel.resourceName === 'folder') {
             this._fetchToRoot(this.parentModel);
@@ -359,6 +384,13 @@ var HierarchyWidget = View.extend({
         this.breadcrumbView.setElement(this.$('.g-hierarchy-breadcrumb-bar>ol')).render();
         this.checkedMenuWidget.dropdownToggle = this.$('.g-checked-actions-button');
         this.checkedMenuWidget.setElement(this.$('.g-checked-actions-menu')).render();
+        
+        // Render folder dropdown if enabled
+        if (this._showDropdown) {
+            this.folderDropdownWidget.setElement(this.$('.g-folder-dropdown-container')).render();
+        }
+        
+        // Render folder list view
         this.folderListView.setElement(this.$('.g-folder-list-container')).render();
         if (this.hierarchyPaginated && this.parentModel.resourceName !== 'collection') {
             this.hierarchyPaginated.setElement(this.$('.g-hierarachy-paginated-bar')).render();
@@ -609,6 +641,13 @@ var HierarchyWidget = View.extend({
             folderFilter: this._itemFilter
         });
 
+        this.folderDropdownWidget.initialize({
+            parentType: parent.resourceName,
+            parentId: parent.get('_id'),
+            checkboxes: this._checkboxes,
+            folderFilter: this._itemFilter
+        });
+
         this.updateChecked();
 
         if (parent.resourceName === 'folder') {
@@ -626,6 +665,12 @@ var HierarchyWidget = View.extend({
                 });
             }
             this._initFolderViewSubwidgets();
+        }
+
+        // Update upload widget with new folder reference
+        if (this.uploadWidget) {
+            this.uploadWidget.parent = parent;
+            this.uploadWidget.parentType = parent.resourceName;
         }
 
         this.render();
@@ -719,10 +764,11 @@ var HierarchyWidget = View.extend({
     uploadDialog: function () {
         var container = $('#g-dialog-container');
 
-        new UploadWidget({
+        // Store the upload widget reference for later updates
+        this.uploadWidget = new UploadWidget({
             el: container,
             parent: this.parentModel,
-            parentType: this.parentType,
+            parentType: this.parentModel.resourceName,
             parentView: this
         }).on('g:uploadFinished', function (info) {
             handleClose('upload');
@@ -742,7 +788,7 @@ var HierarchyWidget = View.extend({
      * the checked menu state.
      */
     updateChecked: function () {
-        var folders = this.folderListView.checked,
+        var folders = this._showDropdown ? this.folderDropdownWidget.getCheckedFolders() : this.folderListView.checked,
             items = [];
 
         // Only show actions corresponding to the minimum access level over

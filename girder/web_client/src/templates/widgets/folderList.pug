@@ -3,10 +3,15 @@ ul.g-folder-list
     li.g-folder-list-entry(public=(folder.get('public') ? 'true' : 'false'))
       if checkboxes
         input.g-list-checkbox(type="checkbox", g-folder-cid=folder.cid)
+      
+      // Dropdown toggle button
+      button.g-folder-dropdown-toggle(data-folder-id=folder.id, title="Toggle subfolders", class=(expandedFolders && expandedFolders.has(folder.id) ? 'expanded' : ''))
+        i.icon-right-dir
+      
       a.g-folder-list-link(g-folder-cid=folder.cid, href=`#folder/${folder.id}`)
         i.icon-folder
         = folder.get('name')
-        i.icon-right-dir
+      
       .g-folder-privacy
         if folder.get('public')
           i.icon-globe
@@ -14,6 +19,75 @@ ul.g-folder-list
         else
           i.icon-lock
           | Private
+      
+      // Subfolders container
+      if expandedFolders && expandedFolders.has(folder.id)
+        ul.g-folder-children
+          each child in (folderChildren && folderChildren[folder.id] ? folderChildren[folder.id] : [])
+            li.g-folder-child-entry(public=(child.public ? 'true' : 'false'))
+              if checkboxes
+                input.g-list-checkbox(type="checkbox", g-folder-cid=child._id)
+              
+              // Child dropdown toggle
+              button.g-folder-dropdown-toggle(data-folder-id=child._id, title="Toggle subfolders", class=(expandedFolders && expandedFolders.has(child._id) ? 'expanded' : ''))
+                i.icon-right-dir
+              
+              a.g-folder-list-link(g-folder-cid=child._id, data-folder-id=child._id, href=`#folder/${child._id}`)
+                i.icon-folder
+                = child.name
+              
+              .g-folder-privacy
+                if child.public
+                  i.icon-globe
+                  | Public
+                else
+                  i.icon-lock
+                  | Private
+              
+              // Grandchildren container (for deeper nesting)
+              if expandedFolders && expandedFolders.has(child._id)
+                ul.g-folder-grandchildren
+                  each grandchild in (folderChildren && folderChildren[child._id] ? folderChildren[child._id] : [])
+                    li.g-folder-grandchild-entry(public=(grandchild.public ? 'true' : 'false'))
+                      if checkboxes
+                        input.g-list-checkbox(type="checkbox", g-folder-cid=grandchild._id)
+                      
+                      // Grandchild dropdown toggle
+                      button.g-folder-dropdown-toggle(data-folder-id=grandchild._id, title="Toggle subfolders", class=(expandedFolders && expandedFolders.has(grandchild._id) ? 'expanded' : ''))
+                        i.icon-right-dir
+                      
+                      a.g-folder-list-link(g-folder-cid=grandchild._id, data-folder-id=grandchild._id, href=`#folder/${grandchild._id}`)
+                        i.icon-folder
+                        = grandchild.name
+                      
+                      .g-folder-privacy
+                        if grandchild.public
+                          i.icon-globe
+                          | Public
+                        else
+                          i.icon-lock
+                          | Private
+                      
+                      // Great-grandchildren container (for even deeper nesting)
+                      if expandedFolders && expandedFolders.has(grandchild._id)
+                        ul.g-folder-great-grandchildren
+                          each greatGrandchild in (folderChildren && folderChildren[grandchild._id] ? folderChildren[grandchild._id] : [])
+                            li.g-folder-great-grandchild-entry(public=(greatGrandchild.public ? 'true' : 'false'))
+                              if checkboxes
+                                input.g-list-checkbox(type="checkbox", g-folder-cid=greatGrandchild._id)
+                              
+                              a.g-folder-list-link(g-folder-cid=greatGrandchild._id, data-folder-id=greatGrandchild._id, href=`#folder/${greatGrandchild._id}`)
+                                i.icon-folder
+                                = greatGrandchild.name
+                              
+                              .g-folder-privacy
+                                if greatGrandchild.public
+                                  i.icon-globe
+                                  | Public
+                                else
+                                  i.icon-lock
+                                  | Private
+
   if hasMore
     li.g-show-more
       a.g-show-more-folders
