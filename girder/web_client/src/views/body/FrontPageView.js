@@ -5,6 +5,7 @@ import View from '@girder/core/views/View';
 import { cancelRestRequests, getApiRoot } from '@girder/core/rest';
 import events from '@girder/core/events';
 import { getCurrentUser } from '@girder/core/auth';
+import { translate, setLanguage, getCurrentLanguage } from '@girder/core/utilities/translations';
 
 import '@girder/core/stylesheets/body/frontPage.styl';
 
@@ -18,6 +19,11 @@ var FrontPageView = View.extend({
         },
         'click .g-login-link': function () {
             events.trigger('g:loginUi');
+        },
+        'click .g-language-switcher': function (event) {
+            event.preventDefault();
+            const newLanguage = getCurrentLanguage() === 'french' ? 'english' : 'french';
+            setLanguage(newLanguage);
         }
     },
 
@@ -27,6 +33,12 @@ var FrontPageView = View.extend({
         
         // Add class to hide default Girder elements
         $('body').addClass('g-landing-page-active');
+        
+        // Listen for language changes
+        this.languageChangeHandler = () => {
+            this.render();
+        };
+        window.addEventListener('languageChanged', this.languageChangeHandler);
         
         this.render();
     },
@@ -50,49 +62,53 @@ var FrontPageView = View.extend({
                         <div class="g-logo">
                             <div class="g-heart-logo">🫀</div>
                         </div>
-                        <div class="g-title">MEDITWIN brings together French science and technology excellence around virtual twins for the future of medical care</div>
+                        <div class="g-title">${translate('MEDITWIN brings together French science and technology excellence around virtual twins for the future of medical care')}</div>
                     </div>
                     <div class="g-auth">
-                        <button class="g-link g-login-link">Login</button>
-                        <button class="g-link g-register-link">Sign up</button>
+                        <button class="g-link g-login-link">${translate('Login')}</button>
+                        <button class="g-link g-register-link">${translate('Sign up')}</button>
+                        <button class="g-language-switcher">
+                            <span class="g-current-lang">${getCurrentLanguage() === 'french' ? 'Français' : 'English'}</span>
+                            <i class="icon-down-dir"></i>
+                        </button>
                     </div>
                 </div>
                 
                 <div class="g-landing-hero">
-                    <div class="g-hero-title">Meditwin Complex Data Platform</div>
-                    <div class="g-hero-subtitle">Manage, explore, and share your data securely</div>
+                    <div class="g-hero-title">${translate('Meditwin Complex Data Platform')}</div>
+                    <div class="g-hero-subtitle">${translate('Manage, explore, and share your data securely')}</div>
                 </div>
                 
                 <div class="g-landing-content">
                     <div class="g-section">
                         <div class="g-section-header">
                             <div class="g-section-icon">🏥</div>
-                            <div class="g-section-title">Our Project</div>
+                            <div class="g-section-title">${translate('Our Project')}</div>
                         </div>
                         <div class="g-section-content">
                             <div class="g-project-description">
-                                <p>MEDITWIN is a cutting-edge platform designed to revolutionize medical data management and analysis. Our mission is to provide researchers, clinicians, and medical professionals with powerful tools to manage complex medical datasets while maintaining the highest standards of security and privacy.</p>
+                                <p>${translate('MEDITWIN is a cutting-edge platform designed to revolutionize medical data management and analysis. Our mission is to provide researchers, clinicians, and medical professionals with powerful tools to manage complex medical datasets while maintaining the highest standards of security and privacy.')}</p>
                                 
                                 <div class="g-features-grid">
                                     <div class="g-feature">
                                         <div class="g-feature-icon">🔬</div>
-                                        <div class="g-feature-title">Advanced Research Tools</div>
-                                        <div class="g-feature-desc">State-of-the-art data analysis and visualization capabilities for medical research</div>
+                                        <div class="g-feature-title">${translate('Advanced Research Tools')}</div>
+                                        <div class="g-feature-desc">${translate('State-of-the-art data analysis and visualization capabilities for medical research')}</div>
                                     </div>
                                     <div class="g-feature">
                                         <div class="g-feature-icon">🛡️</div>
-                                        <div class="g-feature-title">HIPAA Compliant</div>
-                                        <div class="g-feature-desc">Full compliance with medical data protection regulations and standards</div>
+                                        <div class="g-feature-title">${translate('HIPAA Compliant')}</div>
+                                        <div class="g-feature-desc">${translate('Full compliance with medical data protection regulations and standards')}</div>
                                     </div>
                                     <div class="g-feature">
                                         <div class="g-feature-icon">🤝</div>
-                                        <div class="g-feature-title">Collaborative Platform</div>
-                                        <div class="g-feature-desc">Enable seamless collaboration between medical teams and research institutions</div>
+                                        <div class="g-feature-title">${translate('Collaborative Platform')}</div>
+                                        <div class="g-feature-desc">${translate('Enable seamless collaboration between medical teams and research institutions')}</div>
                                     </div>
                                     <div class="g-feature">
                                         <div class="g-feature-icon">📊</div>
-                                        <div class="g-feature-title">Real-time Analytics</div>
-                                        <div class="g-feature-desc">Live data processing and insights for immediate clinical decision support</div>
+                                        <div class="g-feature-title">${translate('Real-time Analytics')}</div>
+                                        <div class="g-feature-desc">${translate('Live data processing and insights for immediate clinical decision support')}</div>
                                     </div>
                                 </div>
                             </div>
@@ -102,21 +118,21 @@ var FrontPageView = View.extend({
                     <div class="g-section">
                         <div class="g-section-header">
                             <div class="g-section-icon">🖼️</div>
-                            <div class="g-section-title">Gallery</div>
+                            <div class="g-section-title">${translate('Gallery')}</div>
                         </div>
                         <div class="g-section-content">
                             <div class="g-gallery">
                                 <div class="g-photo">
-                                    <div class="g-photo-placeholder">Medical Data Visualization</div>
+                                    <div class="g-photo-placeholder">${translate('Medical Data Visualization')}</div>
                                 </div>
                                 <div class="g-photo">
-                                    <div class="g-photo-placeholder">Research Dashboard</div>
+                                    <div class="g-photo-placeholder">${translate('Research Dashboard')}</div>
                                 </div>
                                 <div class="g-photo">
-                                    <div class="g-photo-placeholder">Clinical Interface</div>
+                                    <div class="g-photo-placeholder">${translate('Clinical Interface')}</div>
                                 </div>
                                 <div class="g-photo">
-                                    <div class="g-photo-placeholder">Analytics Platform</div>
+                                    <div class="g-photo-placeholder">${translate('Analytics Platform')}</div>
                                 </div>
                             </div>
                         </div>
@@ -125,21 +141,21 @@ var FrontPageView = View.extend({
                     <div class="g-section">
                         <div class="g-section-header">
                             <div class="g-section-icon">🏢</div>
-                            <div class="g-section-title">About Our Company</div>
+                            <div class="g-section-title">${translate('About Our Company')}</div>
                         </div>
                         <div class="g-section-content">
                             <div class="g-company-info">
-                                <p>MEDITWIN is developed by a team of medical professionals, data scientists, and software engineers dedicated to advancing healthcare through technology. We are committed to providing innovative solutions that improve patient outcomes and accelerate medical research.</p>
+                                <p>${translate('MEDITWIN is developed by a team of medical professionals, data scientists, and software engineers dedicated to advancing healthcare through technology. We are committed to providing innovative solutions that improve patient outcomes and accelerate medical research.')}</p>
                                 
                                 <div class="g-contact-info">
                                     <div class="g-contact-item">
-                                        <strong>Contact:</strong> meditwin.contact@ihu-liryc.fr
+                                        <strong>${translate('Contact:')}</strong> meditwin.contact@ihu-liryc.fr
                                     </div>
                                     <div class="g-contact-item">
-                                        <strong>Institution:</strong> IHU LIRYC - Bordeaux University Hospital
+                                        <strong>${translate('Institution:')}</strong> IHU LIRYC - Bordeaux University Hospital
                                     </div>
                                     <div class="g-contact-item">
-                                        <strong>Location:</strong> Bordeaux, France
+                                        <strong>${translate('Location:')}</strong> Bordeaux, France
                                     </div>
                                 </div>
                             </div>
@@ -150,6 +166,14 @@ var FrontPageView = View.extend({
         `);
         
         return this;
+    },
+
+    destroy: function () {
+        // Clean up event listener
+        if (this.languageChangeHandler) {
+            window.removeEventListener('languageChanged', this.languageChangeHandler);
+        }
+        View.prototype.destroy.call(this);
     }
 });
 
