@@ -92,11 +92,20 @@ module.exports = {
                     fallback: 'style-loader'
                 })
             },
-            // CSS
+            // CSS from node_modules (without ExtractTextPlugin)
             {
                 resource: {
                     test: /\.css$/,
-                    include: loaderPathsNodeModules
+                    include: [nodeModules],
+                    exclude: loaderPaths
+                },
+                use: ['style-loader', 'css-loader']
+            },
+            // CSS from core package (with ExtractTextPlugin)
+            {
+                resource: {
+                    test: /\.css$/,
+                    include: loaderPaths
                 },
                 use: ExtractTextPlugin.extract({
                     use: ['css-loader'],
