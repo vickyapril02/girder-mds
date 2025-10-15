@@ -294,8 +294,8 @@ const frenchTranslations = {
             'Location:': 'Localisation :'
 };
 
-// Current language state
-let currentLanguage = 'french'; // Default to French
+// Current language state - load from localStorage or default to French
+let currentLanguage = localStorage.getItem('meditwin-language') || 'french';
 
 // Get current translations based on language
 function getCurrentTranslations() {
@@ -319,6 +319,8 @@ export function translate(key) {
 export function setLanguage(language) {
     if (language === 'english' || language === 'french') {
         currentLanguage = language;
+        // Save language choice to localStorage for persistence
+        localStorage.setItem('meditwin-language', currentLanguage);
         // Trigger a custom event to notify components to re-render
         window.dispatchEvent(new CustomEvent('languageChanged', { 
             detail: { language: currentLanguage } 

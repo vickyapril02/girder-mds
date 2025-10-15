@@ -68,7 +68,7 @@ var FrontPageView = View.extend({
                         <button class="g-link g-login-link">${translate('Login')}</button>
                         <button class="g-link g-register-link">${translate('Sign up')}</button>
                         <button class="g-language-switcher">
-                            <span class="g-current-lang">${getCurrentLanguage() === 'french' ? 'Français' : 'English'}</span>
+                            <span class="g-current-lang">${getCurrentLanguage() === 'french' ? 'English' : 'Français'}</span>
                             <i class="icon-down-dir"></i>
                         </button>
                     </div>
