@@ -1,4 +1,4 @@
-#!/Users/vigneshwar.gurunatha/Desktop/meditwin/girder-meditwin/venv/bin/python
+#!/Users/vigneshwar.gurunatha/Desktop/girder-git/girder-meditwin/venv/bin/python3
 
 import sys
 import json

@@ -1,0 +1,258 @@
+// Folder Tree Widget Styles
+.g-folder-tree-container
+  background #fff
+  border 1px solid #ddd
+  border-radius 8px
+  overflow hidden
+  box-shadow 0 2px 4px rgba(0,0,0,0.1)
+
+  .g-folder-tree-header
+    background #f8f9fa
+    padding 15px 20px
+    border-bottom 1px solid #ddd
+    display flex
+    justify-content space-between
+    align-items center
+
+    .g-folder-tree-title
+      font-size 16px
+      font-weight 600
+      color #333
+      margin 0
+
+    .g-folder-tree-actions
+      display flex
+      gap 10px
+      align-items center
+
+      .g-folder-tree-check-all
+        display flex
+        align-items center
+        gap 5px
+        font-size 14px
+        color #666
+        cursor pointer
+        margin 0
+
+        input[type="checkbox"]
+          margin 0
+
+      .g-folder-tree-controls
+        display flex
+        gap 5px
+
+        .g-folder-tree-btn
+          width 28px
+          height 28px
+          padding 0
+          border 1px solid #ddd
+          background #fff
+          color #666
+          border-radius 4px
+          cursor pointer
+          display flex
+          align-items center
+          justify-content center
+          transition all 0.2s ease
+
+          &:hover
+            background #e9ecef
+            color #333
+            border-color #adb5bd
+
+          i
+            font-size 12px
+
+  .g-folder-tree-content
+    max-height 400px
+    overflow-y auto
+    padding 10px 0
+
+    .g-folder-tree-item
+      position relative
+      margin 0
+      padding 0
+
+      .g-folder-tree-row
+        display flex
+        align-items center
+        padding 8px 20px
+        cursor pointer
+        transition background-color 0.2s ease
+        border-bottom 1px solid #f0f0f0
+
+        &:hover
+          background-color #f8f9fa
+
+        .g-folder-tree-toggle
+          width 20px
+          height 20px
+          display flex
+          align-items center
+          justify-content center
+          cursor pointer
+          margin-right 8px
+          border-radius 3px
+          transition all 0.2s ease
+
+          &:hover
+            background-color #e9ecef
+
+          i
+            font-size 12px
+            color #666
+            transition transform 0.2s ease
+
+          &.expanded i
+            transform rotate(90deg)
+
+          &.collapsed i
+            transform rotate(0deg)
+
+        .g-folder-tree-spacer
+          width 20px
+          height 20px
+          margin-right 8px
+
+        .g-folder-tree-checkbox
+          margin-right 8px
+          cursor pointer
+
+        .g-folder-tree-link
+          display flex
+          align-items center
+          flex 1
+          text-decoration none
+          color #333
+          font-size 14px
+
+          &:hover
+            color #007bff
+            text-decoration none
+
+          i
+            margin-right 8px
+            color #6c757d
+            font-size 16px
+
+          .g-folder-tree-name
+            font-weight 500
+            margin-right 8px
+
+          .g-folder-tree-description
+            color #666
+            font-size 12px
+            font-style italic
+
+      .g-folder-tree-children
+        background #fafafa
+        border-left 2px solid #e9ecef
+        margin-left 20px
+
+        .g-folder-tree-item:last-child
+          .g-folder-tree-row
+            border-bottom none
+
+// Tree view controls
+.g-folder-tree-controls
+  padding 10px 20px
+  background #f8f9fa
+  border-top 1px solid #ddd
+  display flex
+  gap 10px
+
+  .g-folder-tree-btn
+    padding 6px 12px
+    border 1px solid #ddd
+    background #fff
+    color #666
+    border-radius 4px
+    cursor pointer
+    font-size 12px
+    transition all 0.2s ease
+
+    &:hover
+      background #e9ecef
+      color #333
+
+    &.active
+      background #007bff
+      color #fff
+      border-color #007bff
+
+// Loading and error states
+.g-folder-tree-loading,
+.g-folder-tree-error
+  padding 20px
+  text-align center
+  color #666
+  font-style italic
+
+.g-folder-tree-error
+  color #dc3545
+
+// Responsive design
+@media (max-width: 768px)
+  .g-folder-tree-container
+    .g-folder-tree-header
+      flex-direction column
+      gap 10px
+      align-items flex-start
+
+    .g-folder-tree-content
+      max-height 300px
+
+      .g-folder-tree-item
+        .g-folder-tree-row
+          padding 6px 15px
+
+          .g-folder-tree-link
+            font-size 13px
+
+            .g-folder-tree-description
+              display none // Hide descriptions on mobile
+
+// Dark theme support
+@media (prefers-color-scheme: dark)
+  .g-folder-tree-container
+    background #2d3748
+    border-color #4a5568
+    color #e2e8f0
+
+    .g-folder-tree-header
+      background #1a202c
+      border-color #4a5568
+
+      .g-folder-tree-title
+        color #e2e8f0
+
+    .g-folder-tree-content
+      .g-folder-tree-item
+        .g-folder-tree-row
+          border-color #4a5568
+
+          &:hover
+            background-color #2d3748
+
+          .g-folder-tree-toggle
+            &:hover
+              background-color #4a5568
+
+            i
+              color #a0aec0
+
+          .g-folder-tree-link
+            color #e2e8f0
+
+            &:hover
+              color #63b3ed
+
+            i
+              color #a0aec0
+
+            .g-folder-tree-description
+              color #a0aec0
+
+        .g-folder-tree-children
+          background #1a202c
+          border-color #4a5568

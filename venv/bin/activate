@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/Users/vigneshwar.gurunatha/Desktop/meditwin/girder-meditwin/venv"
+VIRTUAL_ENV="/Users/vigneshwar.gurunatha/Desktop/girder-git/girder-meditwin/venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

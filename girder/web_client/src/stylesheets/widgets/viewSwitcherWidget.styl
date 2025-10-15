@@ -1,0 +1,102 @@
+// View Switcher Widget Styles
+.g-view-switcher
+  display flex
+  align-items center
+  gap 10px
+  padding 10px 15px
+  background #f8f9fa
+  border 1px solid #ddd
+  border-radius 6px
+  margin-bottom 15px
+
+  .g-view-switcher-label
+    font-size 14px
+    font-weight 500
+    color #666
+    margin 0
+
+  .g-view-switcher-buttons
+    display flex
+    gap 5px
+
+    .g-view-switcher-btn
+      display flex
+      align-items center
+      gap 6px
+      padding 8px 12px
+      border 1px solid #ddd
+      background #fff
+      color #666
+      border-radius 4px
+      cursor pointer
+      font-size 13px
+      transition all 0.2s ease
+      text-decoration none
+
+      &:hover
+        background #e9ecef
+        color #333
+        border-color #adb5bd
+
+      &.active
+        background #007bff
+        color #fff
+        border-color #007bff
+
+        &:hover
+          background #0056b3
+          border-color #0056b3
+
+      i
+        font-size 14px
+
+      span
+        font-size 12px
+        font-weight 500
+
+// Responsive design
+@media (max-width: 768px)
+  .g-view-switcher
+    flex-direction column
+    align-items flex-start
+    gap 8px
+
+    .g-view-switcher-buttons
+      width 100%
+      justify-content space-between
+
+      .g-view-switcher-btn
+        flex 1
+        justify-content center
+        padding 10px 8px
+
+        span
+          display none // Hide text on mobile, show only icons
+
+// Dark theme support
+@media (prefers-color-scheme: dark)
+  .g-view-switcher
+    background #1a202c
+    border-color #4a5568
+
+    .g-view-switcher-label
+      color #a0aec0
+
+    .g-view-switcher-buttons
+      .g-view-switcher-btn
+        background #2d3748
+        border-color #4a5568
+        color #a0aec0
+
+        &:hover
+          background #4a5568
+          color #e2e8f0
+
+        &.active
+          background #3182ce
+          color #fff
+          border-color #3182ce
+
+          &:hover
+            background #2c5aa0
+            border-color #2c5aa0
