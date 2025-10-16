@@ -28,6 +28,7 @@ import HierarchyPaginatedTemplate from '@girder/core/templates/widgets/hierarchy
 import HierarchyWidgetTemplate from '@girder/core/templates/widgets/hierarchyWidget.pug';
 
 import '@girder/core/stylesheets/widgets/hierarchyWidget.styl';
+import '@girder/core/stylesheets/widgets/quickNavigation.styl';
 
 import 'bootstrap/js/dropdown';
 
@@ -128,6 +129,9 @@ var HierarchyWidget = View.extend({
         'click .g-description-preview': 'showInfoDialog',
         'click a.g-create-item': 'createItemDialog',
         'click .g-upload-here-button': 'uploadDialog',
+        'click .g-quick-upload': 'uploadDialog',
+        'click .g-quick-back': 'upOneLevel',
+        'click .g-quick-nav-folder-name': 'navigateToBreadcrumb',
         'click .g-edit-access': 'editAccess',
         'click .g-hierarchy-level-up': 'upOneLevel',
         'click a.g-download-checked': 'downloadChecked',
@@ -451,6 +455,19 @@ var HierarchyWidget = View.extend({
     upOneLevel: function () {
         this.breadcrumbs.pop();
         this.setCurrentModel(this.breadcrumbs[this.breadcrumbs.length - 1]);
+    },
+
+    navigateToBreadcrumb: function (event) {
+        event.preventDefault();
+        const folderName = $(event.currentTarget).text();
+        const breadcrumbIndex = $(event.currentTarget).parent().find('.g-quick-nav-folder-name').index(event.currentTarget);
+        
+        if (breadcrumbIndex < this.breadcrumbs.length) {
+            // Navigate to the clicked folder in the breadcrumb
+            const targetFolder = this.breadcrumbs[breadcrumbIndex];
+            this.breadcrumbs = this.breadcrumbs.slice(0, breadcrumbIndex + 1);
+            this.setCurrentModel(targetFolder);
+        }
     },
 
     /**
@@ -781,13 +798,19 @@ var HierarchyWidget = View.extend({
         }).on('g:uploadFinished', function (info) {
             handleClose('upload');
             this.upload = false;
-            if (this.parentModel.has('nItems')) {
-                this.parentModel.increment('nItems', info.files.length);
-            }
-            if (this.parentModel.has('size')) {
-                this.parentModel.increment('size', info.totalSize);
-            }
-            this.setCurrentModel(this.parentModel, { setRoute: false });
+            
+            // Show a brief success message
+            events.trigger('g:alert', {
+                icon: 'ok',
+                text: 'Upload completed successfully! Refreshing page...',
+                type: 'success',
+                timeout: 2000
+            });
+            
+            // Reload the page after a short delay to show the success message
+            setTimeout(() => {
+                window.location.reload();
+            }, 1000);
         }, this).render();
     },
 

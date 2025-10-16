@@ -84,6 +84,27 @@
             |  Select this #{type}.
             i.icon-right-dir
   .g-folder-dropdown-container
+  .g-quick-navigation-container
+    .g-quick-nav-header
+      h5 Quick Navigation
+    .g-quick-nav-current
+      strong Current: 
+      if breadcrumbs && breadcrumbs.length > 0
+        span.g-quick-nav-path
+          each breadcrumb, index in breadcrumbs
+            if index > 0
+              span.g-quick-nav-separator /
+            span.g-quick-nav-folder-name= breadcrumb.name()
+      else
+        span.g-quick-nav-folder-name= model.name()
+    .g-quick-nav-actions
+      button.g-quick-upload.btn.btn-success.btn-sm(title="Upload files here")
+        i.icon-upload
+        | Upload Here
+      if breadcrumbs && breadcrumbs.length > 1
+        button.g-quick-back.btn.btn-default.btn-sm(title="Go back to parent folder")
+          i.icon-left-open
+          | Back
   .g-folder-list-container
   .g-item-list-container
   .g-empty-parent-message.g-info-message-container.hide

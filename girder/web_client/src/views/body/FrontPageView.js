@@ -29,7 +29,7 @@ var FrontPageView = View.extend({
 
     initialize: function (settings) {
         cancelRestRequests('fetch');
-        this.brandName = settings.brandName || 'MEDITWIN';
+        this.brandName = settings.brandName || 'Meditwin';
         
         // Add class to hide default Girder elements
         $('body').addClass('g-landing-page-active');
@@ -56,12 +56,12 @@ var FrontPageView = View.extend({
         if (currentUser) {
             // Remove the landing page class when logged in
             $('body').removeClass('g-landing-page-active');
-            // For logged-in users, redirect to collections
-            events.trigger('g:navigateTo', 'collections');
+            // For logged-in users, show a custom dashboard instead of redirecting
+            this.renderLoggedInDashboard();
             return this;
         }
         
-        // For anonymous users, show the full impressive MEDITWIN landing page
+        // For anonymous users, show the full impressive Meditwin landing page
         this.$el.html(`
             <div class="g-landing">
                 <div class="g-landing-header">
@@ -69,7 +69,7 @@ var FrontPageView = View.extend({
                         <div class="g-logo">
                             <div class="g-heart-logo">🫀</div>
                         </div>
-                        <div class="g-title">${translate('MEDITWIN brings together French science and technology excellence around virtual twins for the future of medical care')}</div>
+                        <div class="g-title">${translate('Meditwin brings together French science and technology excellence around virtual twins for the future of medical care')}</div>
                     </div>
                     <div class="g-auth">
                         <button class="g-link g-login-link">${translate('Login')}</button>
@@ -166,6 +166,108 @@ var FrontPageView = View.extend({
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `);
+        
+        return this;
+    },
+
+    /**
+     * Render a custom dashboard for logged-in users
+     */
+    renderLoggedInDashboard: function () {
+        const currentUser = getCurrentUser();
+        
+        this.$el.html(`
+            <div class="g-dashboard">
+                <div class="g-dashboard-header">
+                    <div class="g-welcome-section">
+                        <div class="g-welcome-icon">🫀</div>
+                        <div class="g-welcome-content">
+                            <h1 class="g-welcome-title">${translate('Welcome to Meditwin')}</h1>
+                            <p class="g-welcome-subtitle">${translate('Your medical data management platform')}</p>
+                            <p class="g-user-greeting">${translate('Hello')}, <strong>${currentUser.get('firstName') || currentUser.get('login')}</strong>!</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="g-dashboard-content">
+                    <div class="g-dashboard-grid">
+                        <div class="g-dashboard-card">
+                            <div class="g-card-icon">📁</div>
+                            <div class="g-card-content">
+                                <h3 class="g-card-title">${translate('My Data')}</h3>
+                                <p class="g-card-description">${translate('Access and manage your personal medical data and research files')}</p>
+                                <a href="#user/${currentUser.id}" class="g-card-link">${translate('Go to My Data')} →</a>
+                            </div>
+                        </div>
+                        
+                        <div class="g-dashboard-card">
+                            <div class="g-card-icon">🗂️</div>
+                            <div class="g-card-content">
+                                <h3 class="g-card-title">${translate('Collections')}</h3>
+                                <p class="g-card-description">${translate('Browse and explore shared medical data collections')}</p>
+                                <a href="#collections" class="g-card-link">${translate('View Collections')} →</a>
+                            </div>
+                        </div>
+                        
+                        <div class="g-dashboard-card">
+                            <div class="g-card-icon">👥</div>
+                            <div class="g-card-content">
+                                <h3 class="g-card-title">${translate('Collaboration')}</h3>
+                                <p class="g-card-description">${translate('Work with teams and share data securely')}</p>
+                                <a href="#groups" class="g-card-link">${translate('Manage Groups')} →</a>
+                            </div>
+                        </div>
+                        
+                        <div class="g-dashboard-card">
+                            <div class="g-card-icon">⚙️</div>
+                            <div class="g-card-content">
+                                <h3 class="g-card-title">${translate('Account Settings')}</h3>
+                                <p class="g-card-description">${translate('Manage your account preferences and security settings')}</p>
+                                <a href="#useraccount/${currentUser.id}/info" class="g-card-link">${translate('Account Settings')} →</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="g-dashboard-stats">
+                        <div class="g-stats-section">
+                            <h3 class="g-stats-title">${translate('Quick Stats')}</h3>
+                            <div class="g-stats-grid">
+                                <div class="g-stat-item">
+                                    <div class="g-stat-number">--</div>
+                                    <div class="g-stat-label">${translate('Files Uploaded')}</div>
+                                </div>
+                                <div class="g-stat-item">
+                                    <div class="g-stat-number">--</div>
+                                    <div class="g-stat-label">${translate('Collections')}</div>
+                                </div>
+                                <div class="g-stat-item">
+                                    <div class="g-stat-number">--</div>
+                                    <div class="g-stat-label">${translate('Groups Joined')}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="g-dashboard-actions">
+                        <h3 class="g-actions-title">${translate('Quick Actions')}</h3>
+                        <div class="g-actions-buttons">
+                            <button class="g-action-btn g-primary" onclick="events.trigger('g:navigateTo', 'collections')">
+                                <i class="icon-folder"></i>
+                                ${translate('Browse Collections')}
+                            </button>
+                            <button class="g-action-btn" onclick="events.trigger('g:navigateTo', 'user/' + '${currentUser.id}')">
+                                <i class="icon-user"></i>
+                                ${translate('My Data Space')}
+                            </button>
+                            <button class="g-action-btn" onclick="events.trigger('g:navigateTo', 'groups')">
+                                <i class="icon-users"></i>
+                                ${translate('Manage Groups')}
+                            </button>
                         </div>
                     </div>
                 </div>

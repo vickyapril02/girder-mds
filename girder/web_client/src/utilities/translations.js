@@ -12,11 +12,11 @@ const englishTranslations = {
     'Passwords do not match, try again.': 'Passwords do not match, try again.',
     
     // Front page content
-    'MEDITWIN brings together French science and technology excellence around virtual twins for the future of medical care': 'MEDITWIN brings together French science and technology excellence around virtual twins for the future of medical care',
+    'Meditwin brings together French science and technology excellence around virtual twins for the future of medical care': 'Meditwin brings together French science and technology excellence around virtual twins for the future of medical care',
     'Meditwin Complex Data Platform': 'Meditwin Complex Data Platform',
     'Manage, explore, and share your data securely': 'Manage, explore, and share your data securely',
     'Our Project': 'Our Project',
-    'MEDITWIN is a cutting-edge platform designed to revolutionize medical data management and analysis. Our mission is to provide researchers, clinicians, and medical professionals with powerful tools to manage complex medical datasets while maintaining the highest standards of security and privacy.': 'MEDITWIN is a cutting-edge platform designed to revolutionize medical data management and analysis. Our mission is to provide researchers, clinicians, and medical professionals with powerful tools to manage complex medical datasets while maintaining the highest standards of security and privacy.',
+    'Meditwin is a cutting-edge platform designed to revolutionize medical data management and analysis. Our mission is to provide researchers, clinicians, and medical professionals with powerful tools to manage complex medical datasets while maintaining the highest standards of security and privacy.': 'Meditwin is a cutting-edge platform designed to revolutionize medical data management and analysis. Our mission is to provide researchers, clinicians, and medical professionals with powerful tools to manage complex medical datasets while maintaining the highest standards of security and privacy.',
     
     // Features
     'Advanced Research Tools': 'Advanced Research Tools',
@@ -37,7 +37,7 @@ const englishTranslations = {
     
     // About section
     'About Our Company': 'About Our Company',
-    'MEDITWIN is developed by a team of medical professionals, data scientists, and software engineers dedicated to advancing healthcare through technology. We are committed to providing innovative solutions that improve patient outcomes and accelerate medical research.': 'MEDITWIN is developed by a team of medical professionals, data scientists, and software engineers dedicated to advancing healthcare through technology. We are committed to providing innovative solutions that improve patient outcomes and accelerate medical research.',
+    'Meditwin is developed by a team of medical professionals, data scientists, and software engineers dedicated to advancing healthcare through technology. We are committed to providing innovative solutions that improve patient outcomes and accelerate medical research.': 'Meditwin is developed by a team of medical professionals, data scientists, and software engineers dedicated to advancing healthcare through technology. We are committed to providing innovative solutions that improve patient outcomes and accelerate medical research.',
     'Contact:': 'Contact:',
     'Institution:': 'Institution:',
     'Location:': 'Location:',
@@ -122,12 +122,12 @@ const englishTranslations = {
     'interactive web API docs': 'interactive web API docs',
             'This instance of': 'This instance of',
             'was built from version': 'was built from version',
-            // MEDITWIN Landing Page
-            'MEDITWIN brings together French science and technology excellence around virtual twins for the future of medical care': 'MEDITWIN brings together French science and technology excellence around virtual twins for the future of medical care',
+            // Meditwin Landing Page
+            'Meditwin brings together French science and technology excellence around virtual twins for the future of medical care': 'Meditwin brings together French science and technology excellence around virtual twins for the future of medical care',
             'Meditwin Complex Data Platform': 'Meditwin Complex Data Platform',
             'Manage, explore, and share your data securely': 'Manage, explore, and share your data securely',
             'Our Project': 'Our Project',
-            'MEDITWIN is a cutting-edge platform designed to revolutionize medical data management and analysis. Our mission is to provide researchers, clinicians, and medical professionals with powerful tools to manage complex medical datasets while maintaining the highest standards of security and privacy.': 'MEDITWIN is a cutting-edge platform designed to revolutionize medical data management and analysis. Our mission is to provide researchers, clinicians, and medical professionals with powerful tools to manage complex medical datasets while maintaining the highest standards of security and privacy.',
+            'Meditwin is a cutting-edge platform designed to revolutionize medical data management and analysis. Our mission is to provide researchers, clinicians, and medical professionals with powerful tools to manage complex medical datasets while maintaining the highest standards of security and privacy.': 'Meditwin is a cutting-edge platform designed to revolutionize medical data management and analysis. Our mission is to provide researchers, clinicians, and medical professionals with powerful tools to manage complex medical datasets while maintaining the highest standards of security and privacy.',
             'Advanced Research Tools': 'Advanced Research Tools',
             'State-of-the-art data analysis and visualization capabilities for medical research': 'State-of-the-art data analysis and visualization capabilities for medical research',
             'HIPAA Compliant': 'HIPAA Compliant',
@@ -142,7 +142,7 @@ const englishTranslations = {
             'Clinical Interface': 'Clinical Interface',
             'Analytics Platform': 'Analytics Platform',
             'About Our Company': 'About Our Company',
-            'MEDITWIN is developed by a team of medical professionals, data scientists, and software engineers dedicated to advancing healthcare through technology. We are committed to providing innovative solutions that improve patient outcomes and accelerate medical research.': 'MEDITWIN is developed by a team of medical professionals, data scientists, and software engineers dedicated to advancing healthcare through technology. We are committed to providing innovative solutions that improve patient outcomes and accelerate medical research.',
+            'Meditwin is developed by a team of medical professionals, data scientists, and software engineers dedicated to advancing healthcare through technology. We are committed to providing innovative solutions that improve patient outcomes and accelerate medical research.': 'Meditwin is developed by a team of medical professionals, data scientists, and software engineers dedicated to advancing healthcare through technology. We are committed to providing innovative solutions that improve patient outcomes and accelerate medical research.',
             'Contact:': 'Contact:',
             'Institution:': 'Institution:',
             'Location:': 'Location:'
@@ -158,11 +158,11 @@ const frenchTranslations = {
     'Passwords do not match, try again.': 'Les mots de passe ne correspondent pas, réessayez.',
     
     // Front page content
-    'MEDITWIN brings together French science and technology excellence around virtual twins for the future of medical care': 'MEDITWIN rassemble l\'excellence française en science et technologie autour des jumeaux virtuels pour l\'avenir des soins médicaux',
+    'Meditwin brings together French science and technology excellence around virtual twins for the future of medical care': 'Meditwin rassemble l\'excellence française en science et technologie autour des jumeaux virtuels pour l\'avenir des soins médicaux',
     'Meditwin Complex Data Platform': 'Plateforme de Données Complexes Meditwin',
     'Manage, explore, and share your data securely': 'Gérez, explorez et partagez vos données en toute sécurité',
     'Our Project': 'Notre Projet',
-    'MEDITWIN is a cutting-edge platform designed to revolutionize medical data management and analysis. Our mission is to provide researchers, clinicians, and medical professionals with powerful tools to manage complex medical datasets while maintaining the highest standards of security and privacy.': 'MEDITWIN est une plateforme de pointe conçue pour révolutionner la gestion et l\'analyse des données médicales. Notre mission est de fournir aux chercheurs, cliniciens et professionnels de la santé des outils puissants pour gérer des ensembles de données médicales complexes tout en maintenant les plus hauts standards de sécurité et de confidentialité.',
+    'Meditwin is a cutting-edge platform designed to revolutionize medical data management and analysis. Our mission is to provide researchers, clinicians, and medical professionals with powerful tools to manage complex medical datasets while maintaining the highest standards of security and privacy.': 'Meditwin est une plateforme de pointe conçue pour révolutionner la gestion et l\'analyse des données médicales. Notre mission est de fournir aux chercheurs, cliniciens et professionnels de la santé des outils puissants pour gérer des ensembles de données médicales complexes tout en maintenant les plus hauts standards de sécurité et de confidentialité.',
     
     // Features
     'Advanced Research Tools': 'Outils de Recherche Avancés',
@@ -183,7 +183,7 @@ const frenchTranslations = {
     
     // About section
     'About Our Company': 'À Propos de Notre Entreprise',
-    'MEDITWIN is developed by a team of medical professionals, data scientists, and software engineers dedicated to advancing healthcare through technology. We are committed to providing innovative solutions that improve patient outcomes and accelerate medical research.': 'MEDITWIN est développé par une équipe de professionnels de la santé, de scientifiques des données et d\'ingénieurs logiciels dédiés à l\'amélioration des soins de santé par la technologie. Nous nous engageons à fournir des solutions innovantes qui améliorent les résultats des patients et accélèrent la recherche médicale.',
+    'Meditwin is developed by a team of medical professionals, data scientists, and software engineers dedicated to advancing healthcare through technology. We are committed to providing innovative solutions that improve patient outcomes and accelerate medical research.': 'Meditwin est développé par une équipe de professionnels de la santé, de scientifiques des données et d\'ingénieurs logiciels dédiés à l\'amélioration des soins de santé par la technologie. Nous nous engageons à fournir des solutions innovantes qui améliorent les résultats des patients et accélèrent la recherche médicale.',
     'Contact:': 'Contact :',
     'Institution:': 'Institution :',
     'Location:': 'Localisation :',
@@ -268,12 +268,12 @@ const frenchTranslations = {
     'interactive web API docs': 'documentation interactive de l\'API web',
             'This instance of': 'Cette instance de',
             'was built from version': 'a été construite à partir de la version',
-            // MEDITWIN Landing Page
-            'MEDITWIN brings together French science and technology excellence around virtual twins for the future of medical care': 'MEDITWIN rassemble l\'excellence française en science et technologie autour des jumeaux virtuels pour l\'avenir des soins médicaux',
+            // Meditwin Landing Page
+            'Meditwin brings together French science and technology excellence around virtual twins for the future of medical care': 'Meditwin rassemble l\'excellence française en science et technologie autour des jumeaux virtuels pour l\'avenir des soins médicaux',
             'Meditwin Complex Data Platform': 'Plateforme de Données Complexes Meditwin',
             'Manage, explore, and share your data securely': 'Gérez, explorez et partagez vos données en toute sécurité',
             'Our Project': 'Notre Projet',
-            'MEDITWIN is a cutting-edge platform designed to revolutionize medical data management and analysis. Our mission is to provide researchers, clinicians, and medical professionals with powerful tools to manage complex medical datasets while maintaining the highest standards of security and privacy.': 'MEDITWIN est une plateforme de pointe conçue pour révolutionner la gestion et l\'analyse des données médicales. Notre mission est de fournir aux chercheurs, cliniciens et professionnels de la santé des outils puissants pour gérer des ensembles de données médicales complexes tout en maintenant les plus hauts standards de sécurité et de confidentialité.',
+            'Meditwin is a cutting-edge platform designed to revolutionize medical data management and analysis. Our mission is to provide researchers, clinicians, and medical professionals with powerful tools to manage complex medical datasets while maintaining the highest standards of security and privacy.': 'Meditwin est une plateforme de pointe conçue pour révolutionner la gestion et l\'analyse des données médicales. Notre mission est de fournir aux chercheurs, cliniciens et professionnels de la santé des outils puissants pour gérer des ensembles de données médicales complexes tout en maintenant les plus hauts standards de sécurité et de confidentialité.',
             'Advanced Research Tools': 'Outils de Recherche Avancés',
             'State-of-the-art data analysis and visualization capabilities for medical research': 'Capacités d\'analyse et de visualisation de données de pointe pour la recherche médicale',
             'HIPAA Compliant': 'Conforme HIPAA',
@@ -288,7 +288,7 @@ const frenchTranslations = {
             'Clinical Interface': 'Interface Clinique',
             'Analytics Platform': 'Plateforme d\'Analyses',
             'About Our Company': 'À Propos de Notre Entreprise',
-            'MEDITWIN is developed by a team of medical professionals, data scientists, and software engineers dedicated to advancing healthcare through technology. We are committed to providing innovative solutions that improve patient outcomes and accelerate medical research.': 'MEDITWIN est développé par une équipe de professionnels de la santé, de scientifiques des données et d\'ingénieurs logiciels dédiés à l\'amélioration des soins de santé par la technologie. Nous nous engageons à fournir des solutions innovantes qui améliorent les résultats des patients et accélèrent la recherche médicale.',
+            'Meditwin is developed by a team of medical professionals, data scientists, and software engineers dedicated to advancing healthcare through technology. We are committed to providing innovative solutions that improve patient outcomes and accelerate medical research.': 'Meditwin est développé par une équipe de professionnels de la santé, de scientifiques des données et d\'ingénieurs logiciels dédiés à l\'amélioration des soins de santé par la technologie. Nous nous engageons à fournir des solutions innovantes qui améliorent les résultats des patients et accélèrent la recherche médicale.',
             'Contact:': 'Contact :',
             'Institution:': 'Institution :',
             'Location:': 'Localisation :'

@@ -232,3 +232,201 @@
 
               strong
                 color var(--medical-primary)
+
+// Dashboard styles for logged-in users
+.g-dashboard
+  max-width 1400px
+  margin 0 auto
+  padding 20px
+  background linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 100%)
+  min-height 100vh
+  font-family 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+
+  .g-dashboard-header
+    background #fff
+    border-radius 16px
+    padding 40px
+    margin-bottom 30px
+    box-shadow 0 8px 32px rgba(0,0,0,0.06)
+    border 1px solid rgba(211,47,47,0.1)
+
+    .g-welcome-section
+      display flex
+      align-items center
+      gap 20px
+
+      .g-welcome-icon
+        font-size 48px
+        color var(--medical-primary)
+        text-shadow 0 2px 4px rgba(211,47,47,0.3)
+
+      .g-welcome-content
+        .g-welcome-title
+          font-size 36px
+          font-weight 700
+          color var(--medical-dark)
+          margin 0 0 10px 0
+          letter-spacing -0.5px
+
+        .g-welcome-subtitle
+          font-size 18px
+          color #666
+          margin 0 0 15px 0
+
+        .g-user-greeting
+          font-size 16px
+          color var(--medical-dark)
+          margin 0
+
+  .g-dashboard-content
+    .g-dashboard-grid
+      display grid
+      grid-template-columns repeat(auto-fit, minmax(300px, 1fr))
+      gap 25px
+      margin-bottom 40px
+
+      .g-dashboard-card
+        background #fff
+        border-radius 16px
+        padding 30px
+        box-shadow 0 8px 32px rgba(0,0,0,0.06)
+        border 1px solid rgba(211,47,47,0.1)
+        transition all 0.3s ease
+        position relative
+        overflow hidden
+
+        &:hover
+          transform translateY(-4px)
+          box-shadow 0 12px 40px rgba(0,0,0,0.1)
+
+        &.g-primary-card
+          background linear-gradient(135deg, var(--medical-primary) 0%, #b71c1c 100%)
+          color white
+
+          .g-card-title,
+          .g-card-description,
+          .g-card-link
+            color white
+
+          .g-card-link
+            &:hover
+              color #e3f2fd
+
+        .g-card-icon
+          font-size 36px
+          margin-bottom 20px
+          display block
+
+        .g-card-content
+          .g-card-title
+            font-size 24px
+            font-weight 700
+            color var(--medical-dark)
+            margin 0 0 15px 0
+
+          .g-card-description
+            font-size 16px
+            color #666
+            line-height 1.5
+            margin 0 0 20px 0
+
+          .g-card-link
+            color var(--medical-primary)
+            text-decoration none
+            font-weight 600
+            font-size 16px
+            transition all 0.3s ease
+
+            &:hover
+              color #b71c1c
+              text-decoration underline
+
+    .g-dashboard-stats
+      background #fff
+      border-radius 16px
+      padding 40px
+      margin-bottom 30px
+      box-shadow 0 8px 32px rgba(0,0,0,0.06)
+      border 1px solid rgba(211,47,47,0.1)
+
+      .g-stats-section
+        .g-stats-title
+          font-size 28px
+          font-weight 700
+          color var(--medical-dark)
+          margin 0 0 30px 0
+          text-align center
+
+        .g-stats-grid
+          display grid
+          grid-template-columns repeat(auto-fit, minmax(200px, 1fr))
+          gap 30px
+
+          .g-stat-item
+            text-align center
+            padding 20px
+            background #f8f9fa
+            border-radius 12px
+            border 1px solid rgba(211,47,47,0.1)
+
+            .g-stat-number
+              font-size 36px
+              font-weight 700
+              color var(--medical-primary)
+              margin-bottom 10px
+              display block
+
+            .g-stat-label
+              font-size 16px
+              color var(--medical-dark)
+              font-weight 500
+
+    .g-dashboard-actions
+      background #fff
+      border-radius 16px
+      padding 40px
+      box-shadow 0 8px 32px rgba(0,0,0,0.06)
+      border 1px solid rgba(211,47,47,0.1)
+
+      .g-actions-title
+        font-size 28px
+        font-weight 700
+        color var(--medical-dark)
+        margin 0 0 30px 0
+        text-align center
+
+      .g-actions-buttons
+        display flex
+        gap 20px
+        justify-content center
+        flex-wrap wrap
+
+        .g-action-btn
+          background var(--medical-primary)
+          color white
+          border none
+          border-radius 12px
+          padding 16px 32px
+          cursor pointer
+          font-weight 600
+          font-size 16px
+          box-shadow 0 4px 16px rgba(211,47,47,0.3)
+          transition all 0.3s ease
+          display flex
+          align-items center
+          gap 10px
+          text-decoration none
+
+          &:hover
+            background #b71c1c
+            transform translateY(-2px)
+            box-shadow 0 6px 20px rgba(211,47,47,0.4)
+
+          &.g-primary
+            background linear-gradient(135deg, var(--medical-primary) 0%, var(--medical-secondary) 100%)
+
+            &:hover
+              background linear-gradient(135deg, #b71c1c 0%, #1565c0 100%)
+
+          i
+            font-size 18px
