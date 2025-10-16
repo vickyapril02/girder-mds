@@ -40,6 +40,13 @@ var FrontPageView = View.extend({
         };
         window.addEventListener('languageChanged', this.languageChangeHandler);
         
+        // Listen for login/logout events to re-render
+        this.loginHandler = () => {
+            this.render();
+        };
+        events.on('g:login', this.loginHandler);
+        events.on('g:logout', this.loginHandler);
+        
         this.render();
     },
 
@@ -169,9 +176,13 @@ var FrontPageView = View.extend({
     },
 
     destroy: function () {
-        // Clean up event listener
+        // Clean up event listeners
         if (this.languageChangeHandler) {
             window.removeEventListener('languageChanged', this.languageChangeHandler);
+        }
+        if (this.loginHandler) {
+            events.off('g:login', this.loginHandler);
+            events.off('g:logout', this.loginHandler);
         }
         View.prototype.destroy.call(this);
     }

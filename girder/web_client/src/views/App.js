@@ -343,13 +343,10 @@ var App = View.extend({
      * logout, we redirect to the front page.
      */
     login: function () {
-        var route = splitRoute(Backbone.history.fragment).base;
-        Backbone.history.fragment = null;
-        eventStream.close();
-
         if (getCurrentUser()) {
             eventStream.open();
-            router.navigate(route, { trigger: true });
+            // Refresh page to bypass navigation errors and ensure clean UI state
+            window.location.reload();
         } else {
             router.navigate('/', { trigger: true });
         }

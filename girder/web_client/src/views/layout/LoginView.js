@@ -29,6 +29,7 @@ var LoginView = View.extend({
             login(loginName, password, undefined, otpToken)
                 .done(() => {
                     this.$el.modal('hide');
+                    handleClose('login', { replace: true });
                 })
                 .fail((err) => {
                     if (err.responseJSON.message.indexOf('Girder-OTP') !== -1 &&

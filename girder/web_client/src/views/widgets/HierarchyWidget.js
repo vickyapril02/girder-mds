@@ -264,7 +264,9 @@ var HierarchyWidget = View.extend({
         }
         events.on('g:login', () => {
             this.constructor.resetPickedResources();
+            // Page will refresh after login, so no need for complex state management
         }, this);
+
     },
 
     /**
@@ -671,12 +673,18 @@ var HierarchyWidget = View.extend({
         if (this.uploadWidget) {
             this.uploadWidget.parent = parent;
             this.uploadWidget.parentType = parent.resourceName;
+            // Ensure upload widget is properly updated with new permissions
+            if (this.uploadWidget.updateParent) {
+                this.uploadWidget.updateParent(parent);
+            }
         }
 
         this.render();
         if (!_.has(opts, 'setRoute') || opts.setRoute) {
             this._setRoute();
         }
+        
+        
         this.trigger('g:setCurrentModel');
     },
 
@@ -1084,6 +1092,72 @@ var HierarchyWidget = View.extend({
      */
     refreshFolderList: function () {
         this.folderListView.collection.fetch(null, true);
+    },
+
+
+
+    /**
+     * Refresh the hierarchy widget after login to ensure proper UI state.
+     */
+    refreshAfterLogin: function () {
+        console.log('Refreshing hierarchy widget after login');
+        
+        try {
+            // Re-initialize folder list view with updated permissions
+            if (this.folderListView) {
+                this.folderListView.initialize({
+                    parentType: this.parentModel.resourceName,
+                    parentId: this.parentModel.get('_id'),
+                    checkboxes: this._checkboxes,
+                    folderFilter: this._itemFilter
+                });
+            }
+
+            // Re-initialize folder dropdown view if enabled
+            if (this.folderDropdownWidget) {
+                this.folderDropdownWidget.initialize({
+                    parentType: this.parentModel.resourceName,
+                    parentId: this.parentModel.get('_id'),
+                    checkboxes: this._checkboxes,
+                    folderFilter: this._itemFilter
+                });
+            }
+
+            // Re-initialize item list view if it exists
+            if (this.itemListView && this.parentModel.resourceName === 'folder') {
+                this.itemListView.initialize({
+                    folderId: this.parentModel.get('_id'),
+                    checkboxes: this._checkboxes,
+                    downloadLinks: this._downloadLinks,
+                    viewLinks: this._viewLinks,
+                    itemFilter: this._itemFilter,
+                    showSizes: this._showSizes,
+                    paginated: this._paginated,
+                    public: this.parentModel.get('public'),
+                    accessLevel: this.parentModel.getAccessLevel()
+                });
+            }
+
+            // Update upload widget with new permissions
+            if (this.uploadWidget) {
+                this.uploadWidget.parent = this.parentModel;
+                this.uploadWidget.parentType = this.parentModel.resourceName;
+                // Ensure upload widget is properly updated with new permissions
+                if (this.uploadWidget.updateParent) {
+                    this.uploadWidget.updateParent(this.parentModel);
+                }
+            }
+
+            // Update checked menu widget
+            this.updateChecked();
+
+            // Re-render the widget to reflect changes
+            this.render();
+            
+            console.log('Hierarchy widget refresh completed');
+        } catch (error) {
+            console.error('Error refreshing hierarchy widget after login:', error);
+        }
     },
 
     /**
