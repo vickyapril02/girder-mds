@@ -88,13 +88,13 @@ var FrontPageView = View.extend({
                 
                 <div class="g-landing-content">
                     <div class="g-section">
-                        <div class="g-section-header">
+                        <div class="g-section-header g-centered">
                             <div class="g-section-icon">🏥</div>
                             <div class="g-section-title">${translate('Our Project')}</div>
                         </div>
                         <div class="g-section-content">
                             <div class="g-project-description">
-                                <p>${translate('MEDITWIN is a cutting-edge platform designed to revolutionize medical data management and analysis. Our mission is to provide researchers, clinicians, and medical professionals with powerful tools to manage complex medical datasets while maintaining the highest standards of security and privacy.')}</p>
+                                <p class="g-project-paragraph">${translate('MEDITWIN is revolutionizing healthcare with personalized virtual twins of organs, metabolism, and tumors to improve diagnosis and treatment. Seven medical innovations in neurology, cardiology, and oncology will be developed and deployed via a sovereign industrial cloud platform. Led by Dassault Systèmes and top medical institutions, MEDITWIN sets a new global standard for virtual healthcare.')}</p>
                                 
                                 <div class="g-features-grid">
                                     <div class="g-feature">
