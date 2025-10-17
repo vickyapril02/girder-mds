@@ -20,6 +20,9 @@ var FrontPageView = View.extend({
         'click .g-login-link': function () {
             events.trigger('g:loginUi');
         },
+        'click .g-explore-platform-btn': function () {
+            events.trigger('g:loginUi');
+        },
         'click .g-language-switcher': function (event) {
             event.preventDefault();
             const newLanguage = getCurrentLanguage() === 'french' ? 'english' : 'french';
@@ -82,8 +85,16 @@ var FrontPageView = View.extend({
                 </div>
                 
                 <div class="g-landing-hero">
-                    <div class="g-hero-title">${translate('Meditwin Complex Data Platform')}</div>
-                    <div class="g-hero-subtitle">${translate('Manage, explore, and share your data securely')}</div>
+                    <div class="g-hero-title">${translate('MEDITWIN Platform')}</div>
+                    <div class="g-hero-subtitle">${translate('Building the future of personalized medicine through digital twins')}</div>
+                    <div class="g-hero-cta">
+                        <button class="g-cta-btn g-primary g-explore-platform-btn">
+                            🔹 ${translate('Explore Platform')}
+                        </button>
+                        <button class="g-cta-btn g-secondary" onclick="window.open('https://www.inria.fr/fr/meditwin-sciences-technologies-sante-jumeau-virtuel-numerique', '_blank')">
+                            🔹 ${translate('Learn More')}
+                        </button>
+                    </div>
                 </div>
                 
                 <div class="g-landing-content">
@@ -96,26 +107,57 @@ var FrontPageView = View.extend({
                             <div class="g-project-description">
                                 <p class="g-project-paragraph">${translate('MEDITWIN is revolutionizing healthcare with personalized virtual twins of organs, metabolism, and tumors to improve diagnosis and treatment. Seven medical innovations in neurology, cardiology, and oncology will be developed and deployed via a sovereign industrial cloud platform. Led by Dassault Systèmes and top medical institutions, MEDITWIN sets a new global standard for virtual healthcare.')}</p>
                                 
+                                <div class="g-domains-section">
+                                    <h3 class="g-domains-title">${translate('Key Medical Domains')}</h3>
+                                    <div class="g-domains-grid">
+                                        <div class="g-domain">
+                                            <div class="g-domain-icon">🧠</div>
+                                            <div class="g-domain-title">${translate('Neurology')}</div>
+                                            <div class="g-domain-desc">${translate('Brain digital twins for epilepsy and stroke prediction')}</div>
+                                        </div>
+                                        <div class="g-domain">
+                                            <div class="g-domain-icon">❤️</div>
+                                            <div class="g-domain-title">${translate('Cardiology')}</div>
+                                            <div class="g-domain-desc">${translate('Heart modeling for rhythm and ischemia analysis')}</div>
+                                        </div>
+                                        <div class="g-domain">
+                                            <div class="g-domain-icon">🎯</div>
+                                            <div class="g-domain-title">${translate('Oncology')}</div>
+                                            <div class="g-domain-desc">${translate('Tumor simulation for targeted treatment planning')}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
                                 <div class="g-features-grid">
                                     <div class="g-feature">
                                         <div class="g-feature-icon">🔬</div>
                                         <div class="g-feature-title">${translate('Advanced Research Tools')}</div>
-                                        <div class="g-feature-desc">${translate('State-of-the-art data analysis and visualization capabilities for medical research')}</div>
+                                        <div class="g-feature-desc">${translate('Analyze, annotate, and visualize multi-modal medical data')}</div>
                                     </div>
                                     <div class="g-feature">
-                                        <div class="g-feature-icon">🛡️</div>
-                                        <div class="g-feature-title">${translate('HIPAA Compliant')}</div>
-                                        <div class="g-feature-desc">${translate('Full compliance with medical data protection regulations and standards')}</div>
+                                        <div class="g-feature-icon">🧩</div>
+                                        <div class="g-feature-title">${translate('Data Integration')}</div>
+                                        <div class="g-feature-desc">${translate('Combine imaging, genomics, and clinical data in one place')}</div>
+                                    </div>
+                                    <div class="g-feature">
+                                        <div class="g-feature-icon">🔐</div>
+                                        <div class="g-feature-title">${translate('Secure Data Management')}</div>
+                                        <div class="g-feature-desc">${translate('Full HIPAA and GDPR compliance for medical data')}</div>
                                     </div>
                                     <div class="g-feature">
                                         <div class="g-feature-icon">🤝</div>
-                                        <div class="g-feature-title">${translate('Collaborative Platform')}</div>
-                                        <div class="g-feature-desc">${translate('Enable seamless collaboration between medical teams and research institutions')}</div>
+                                        <div class="g-feature-title">${translate('Collaborative Workspaces')}</div>
+                                        <div class="g-feature-desc">${translate('Create shared projects between hospitals and research labs')}</div>
                                     </div>
                                     <div class="g-feature">
                                         <div class="g-feature-icon">📊</div>
-                                        <div class="g-feature-title">${translate('Real-time Analytics')}</div>
-                                        <div class="g-feature-desc">${translate('Live data processing and insights for immediate clinical decision support')}</div>
+                                        <div class="g-feature-title">${translate('Real-Time Analytics')}</div>
+                                        <div class="g-feature-desc">${translate('Streamlined dashboards and live metrics for decision-making')}</div>
+                                    </div>
+                                    <div class="g-feature">
+                                        <div class="g-feature-icon">🏭</div>
+                                        <div class="g-feature-title">${translate('Dassault Systèmes Integration')}</div>
+                                        <div class="g-feature-desc">${translate('Powered by industry-leading 3D modeling and simulation technology')}</div>
                                     </div>
                                 </div>
                             </div>
@@ -123,23 +165,62 @@ var FrontPageView = View.extend({
                     </div>
                     
                     <div class="g-section">
-                        <div class="g-section-header">
-                            <div class="g-section-icon">🖼️</div>
-                            <div class="g-section-title">${translate('Gallery')}</div>
+                        <div class="g-section-header g-centered">
+                            <div class="g-section-icon">🤝</div>
+                            <div class="g-section-title">${translate('Consortium & Partners')}</div>
                         </div>
                         <div class="g-section-content">
-                            <div class="g-gallery">
-                                <div class="g-photo">
-                                    <div class="g-photo-placeholder">${translate('Medical Data Visualization')}</div>
+                            <div class="g-partners-image-container">
+                                <img src="/static/built/meditwin_partners.png" 
+                                     alt="MEDITWIN Consortium Partners" 
+                                     class="g-partners-banner-image" />
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="g-section">
+                        <div class="g-section-header">
+                            <div class="g-section-icon">🚀</div>
+                            <div class="g-section-title">${translate('Recent Projects')}</div>
+                        </div>
+                        <div class="g-section-content">
+                            <div class="g-projects-grid">
+                                <div class="g-project-card" onclick="window.open('https://beat-af.com/?page_id=604', '_blank')">
+                                    <div class="g-project-header">
+                                        <div class="g-project-icon">💓</div>
+                                        <div class="g-project-title">${translate('Beat-AF')}</div>
+                                    </div>
+                                    <div class="g-project-content">
+                                        <h3 class="g-project-subtitle">${translate('THE BEAT-AF PROJECT')}</h3>
+                                        <p class="g-project-description">
+                                            ${translate('The BEAT-AF, Ground-BrEAking Electroporation-based inTervention for Atrial Fibrillation treatment is an action funded by the European Commission for 60 months and started on March, 1st, 2021. It is part of the HADEA agency (European Health and Digital Executive Agency).')}
+                                        </p>
+                                        <p class="g-project-description">
+                                            ${translate('The BEAT-AF consortium regroup 9 partners all over Europe (France, Germany, Belgium, Austria, Czechia) presented in the "meet the centers". The coordinator is Pr Pierre Jaïs from Bordeaux University.')}
+                                        </p>
+                                    </div>
+                                    <div class="g-project-footer">
+                                        <span class="g-project-link">${translate('Learn More')} →</span>
+                                    </div>
                                 </div>
-                                <div class="g-photo">
-                                    <div class="g-photo-placeholder">${translate('Research Dashboard')}</div>
-                                </div>
-                                <div class="g-photo">
-                                    <div class="g-photo-placeholder">${translate('Clinical Interface')}</div>
-                                </div>
-                                <div class="g-photo">
-                                    <div class="g-photo-placeholder">${translate('Analytics Platform')}</div>
+                                
+                                <div class="g-project-card" onclick="window.open('https://ineurheart.eu/en/', '_blank')">
+                                    <div class="g-project-header">
+                                        <div class="g-project-icon">🧠</div>
+                                        <div class="g-project-title">${translate('InEurHeart')}</div>
+                                    </div>
+                                    <div class="g-project-content">
+                                        <h3 class="g-project-subtitle">${translate('AI, Digital Twin & Clinical Trial for a Disruption in Catheter Ablation')}</h3>
+                                        <p class="g-project-description">
+                                            ${translate('inEurHeart is an innovation project in Artificial Intelligence, Digital Twin & Clinical Trial for a Disruption in Catheter Ablation for Ventricular Tachycardia, making ablation therapy accessible to most patients.')}
+                                        </p>
+                                        <p class="g-project-description">
+                                            ${translate('This project is a collaborative project between 5 organizations in France and Netherlands funded by EIT Health – the European Institute of Innovation and Technology, co-funded by the European Union. This project will exemplify how the academic-industrial relationships can be fostered and can lead to drastic changes in clinical practice.')}
+                                        </p>
+                                    </div>
+                                    <div class="g-project-footer">
+                                        <span class="g-project-link">${translate('Learn More')} →</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -148,11 +229,44 @@ var FrontPageView = View.extend({
                     <div class="g-section">
                         <div class="g-section-header">
                             <div class="g-section-icon">🏢</div>
-                            <div class="g-section-title">${translate('About Our Company')}</div>
+                            <div class="g-section-title">${translate('About Us')}</div>
                         </div>
                         <div class="g-section-content">
                             <div class="g-company-info">
                                 <p>${translate('MEDITWIN is developed by a team of medical professionals, data scientists, and software engineers dedicated to advancing healthcare through technology. We are committed to providing innovative solutions that improve patient outcomes and accelerate medical research.')}</p>
+                                
+                                <p>${translate('We manage the data management platform that enables seamless collaboration between medical teams and research institutions, providing secure and efficient data handling for clinical research and patient care.')}</p>
+                                
+                                <div class="g-team-section">
+                                    <h3 class="g-team-title">${translate('Our Team')}</h3>
+                                    <div class="g-team-grid">
+                                        <div class="g-team-member" onclick="window.open('https://team.inria.fr/epione/en/team/maxime-sermesant/', '_blank')">
+                                            <div class="g-team-member-info">
+                                                <div class="g-team-member-name">${translate('Maxime Sermesant')}</div>
+                                                <div class="g-team-member-role">${translate('Head')}</div>
+                                                <div class="g-team-member-link">${translate('View Profile')} →</div>
+                                            </div>
+                                        </div>
+                                        <div class="g-team-member">
+                                            <div class="g-team-member-info">
+                                                <div class="g-team-member-name">${translate('Vicky')}</div>
+                                                <div class="g-team-member-role">${translate('Team Member')}</div>
+                                            </div>
+                                        </div>
+                                        <div class="g-team-member">
+                                            <div class="g-team-member-info">
+                                                <div class="g-team-member-name">${translate('Buntheng')}</div>
+                                                <div class="g-team-member-role">${translate('Team Member')}</div>
+                                            </div>
+                                        </div>
+                                        <div class="g-team-member">
+                                            <div class="g-team-member-info">
+                                                <div class="g-team-member-name">${translate('Florent')}</div>
+                                                <div class="g-team-member-role">${translate('Team Member')}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 
                                 <div class="g-contact-info">
                                     <div class="g-contact-item">

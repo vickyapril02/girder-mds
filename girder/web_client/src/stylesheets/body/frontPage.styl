@@ -122,7 +122,40 @@
       font-size 22px
       opacity 0.95
       max-width 800px
-      margin 0 auto
+      margin 0 auto 40px auto
+
+    .g-hero-cta
+      display flex
+      gap 20px
+      justify-content center
+      flex-wrap wrap
+
+      .g-cta-btn
+        background rgba(255,255,255,0.2)
+        color white
+        border 2px solid rgba(255,255,255,0.3)
+        border-radius 12px
+        padding 16px 32px
+        cursor pointer
+        font-weight 600
+        font-size 16px
+        transition all 0.3s ease
+        backdrop-filter blur(10px)
+
+        &:hover
+          background rgba(255,255,255,0.3)
+          border-color rgba(255,255,255,0.5)
+          transform translateY(-2px)
+          box-shadow 0 8px 25px rgba(0,0,0,0.2)
+
+        &.g-primary
+          background rgba(255,255,255,0.9)
+          color var(--medical-primary)
+          border-color rgba(255,255,255,0.9)
+
+          &:hover
+            background white
+            color var(--medical-primary)
       line-height 1.4
 
   .g-landing-content
@@ -132,7 +165,12 @@
       border-radius 16px
       padding 40px
       box-shadow 0 8px 32px rgba(0,0,0,0.06)
-      border 1px solid rgba(211,47,47,0.1)
+
+      // Special styling for partners section
+      &:has(.g-partners-grid)
+        background linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 100%)
+        border 2px solid var(--medical-secondary)
+        box-shadow 0 12px 40px rgba(25,118,210,0.15)
 
       .g-section-header
         display flex
@@ -143,15 +181,27 @@
         &.g-centered
           justify-content center
           text-align center
+          flex-direction column
+          gap 20px
 
         .g-section-icon
-          font-size 28px
+          font-size 32px
+          display flex
+          align-items center
+          justify-content center
+          width 60px
+          height 60px
+          background linear-gradient(135deg, var(--medical-secondary) 0%, var(--medical-primary) 100%)
+          border-radius 50%
+          color white
+          box-shadow 0 4px 15px rgba(25,118,210,0.3)
 
         .g-section-title
           font-size 28px
           font-weight 700
           color var(--medical-dark)
           margin 0
+          text-align center
 
       .g-section-content
         .g-project-description
@@ -204,10 +254,306 @@
                 color var(--medical-dark)
                 margin-bottom 10px
 
-              .g-feature-desc
+                .g-feature-desc
+                  font-size 14px
+                  color #666
+                  line-height 1.5
+
+          .g-domains-section
+            margin 40px 0
+            text-align center
+
+            .g-domains-title
+              font-size 28px
+              font-weight 600
+              color var(--medical-dark)
+              margin-bottom 30px
+
+            .g-domains-grid
+              display grid
+              grid-template-columns repeat(auto-fit, minmax(250px, 1fr))
+              gap 25px
+              margin-top 20px
+
+              .g-domain
+                background linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 100%)
+                padding 30px 20px
+                border-radius 16px
+                text-align center
+                border 1px solid rgba(25,118,210,0.1)
+                transition all 0.3s ease
+
+                &:hover
+                  transform translateY(-4px)
+                  box-shadow 0 8px 25px rgba(25,118,210,0.15)
+
+                .g-domain-icon
+                  font-size 40px
+                  margin-bottom 15px
+
+                .g-domain-title
+                  font-size 20px
+                  font-weight 600
+                  color var(--medical-dark)
+                  margin-bottom 10px
+
+                .g-domain-desc
+                  font-size 14px
+                  color #666
+                  line-height 1.5
+
+          .g-partners-image-container
+            display flex
+            justify-content center
+            align-items center
+            margin-top 30px
+            padding 20px 0
+            width 100%
+            overflow hidden
+
+            .g-partners-banner-image
+              max-width 100%
+              max-height 400px
+              width auto
+              height auto
+              object-fit contain
+              border-radius 16px
+              box-shadow 0 12px 40px rgba(25,118,210,0.15)
+              transition all 0.3s ease
+              border 2px solid var(--medical-secondary)
+
+              &:hover
+                transform translateY(-4px)
+                box-shadow 0 20px 50px rgba(25,118,210,0.25)
+
+            // Responsive breakpoints
+            @media (max-width: 768px)
+              .g-partners-banner-image
+                max-height 300px
+                margin 0 10px
+
+            @media (max-width: 480px)
+              .g-partners-banner-image
+                max-height 250px
+                margin 0 5px
+
+        .g-projects-grid
+          display grid
+          grid-template-columns repeat(auto-fit, minmax(400px, 1fr))
+          gap 30px
+          margin-top 20px
+
+          .g-project-card
+            background #fff
+            border-radius 20px
+            padding 30px
+            box-shadow 0 8px 32px rgba(25,118,210,0.1)
+            border 1px solid rgba(25,118,210,0.1)
+            transition all 0.3s ease
+            cursor pointer
+            position relative
+            overflow hidden
+
+            &:hover
+              transform translateY(-8px)
+              box-shadow 0 20px 60px rgba(25,118,210,0.2)
+              border-color var(--medical-secondary)
+
+            .g-project-header
+              display flex
+              align-items center
+              margin-bottom 20px
+              gap 15px
+
+              .g-project-icon
+                font-size 32px
+                width 50px
+                height 50px
+                display flex
+                align-items center
+                justify-content center
+                background linear-gradient(135deg, var(--medical-primary), var(--medical-secondary))
+                border-radius 12px
+                color white
+
+              .g-project-title
+                font-size 24px
+                font-weight 700
+                color var(--medical-dark)
+                margin 0
+
+            .g-project-content
+              margin-bottom 25px
+
+              .g-project-subtitle
+                font-size 18px
+                font-weight 600
+                color var(--medical-secondary)
+                margin 0 0 15px 0
+                line-height 1.4
+
+              .g-project-description
                 font-size 14px
                 color #666
-                line-height 1.5
+                line-height 1.6
+                margin 0 0 12px 0
+
+                &:last-child
+                  margin-bottom 0
+
+            .g-project-footer
+              display flex
+              justify-content flex-end
+              align-items center
+
+              .g-project-link
+                color var(--medical-secondary)
+                font-weight 600
+                font-size 14px
+                text-decoration none
+                transition all 0.3s ease
+
+                &:hover
+                  color var(--medical-primary)
+
+          // Responsive design for project cards
+          @media (max-width: 768px)
+            grid-template-columns 1fr
+            gap 20px
+
+            .g-project-card
+              padding 20px
+
+              .g-project-header
+                .g-project-icon
+                  font-size 28px
+                  width 45px
+                  height 45px
+
+                .g-project-title
+                  font-size 20px
+
+              .g-project-content
+                .g-project-subtitle
+                  font-size 16px
+
+                .g-project-description
+                  font-size 13px
+
+          @media (max-width: 480px)
+            .g-project-card
+              padding 15px
+
+              .g-project-header
+                flex-direction column
+                text-align center
+                gap 10px
+
+                .g-project-icon
+                  font-size 24px
+                  width 40px
+                  height 40px
+
+                .g-project-title
+                  font-size 18px
+
+              .g-project-content
+                .g-project-subtitle
+                  font-size 15px
+                  text-align center
+
+                .g-project-description
+                  font-size 12px
+                  text-align center
+
+        .g-team-section
+          margin 40px 0
+
+          .g-team-title
+            font-size 24px
+            font-weight 700
+            color var(--medical-dark)
+            margin 0 0 25px 0
+            text-align center
+
+          .g-team-grid
+            display grid
+            grid-template-columns repeat(auto-fit, minmax(200px, 1fr))
+            gap 20px
+            margin-bottom 30px
+
+            .g-team-member
+              background #fff
+              border-radius 16px
+              padding 25px
+              box-shadow 0 4px 20px rgba(25,118,210,0.08)
+              border 1px solid rgba(25,118,210,0.1)
+              transition all 0.3s ease
+              cursor pointer
+              text-align center
+
+              &:hover
+                transform translateY(-4px)
+                box-shadow 0 8px 30px rgba(25,118,210,0.15)
+                border-color var(--medical-secondary)
+
+              .g-team-member-info
+                .g-team-member-name
+                  font-size 18px
+                  font-weight 600
+                  color var(--medical-dark)
+                  margin-bottom 8px
+
+                .g-team-member-role
+                  font-size 14px
+                  color var(--medical-secondary)
+                  margin-bottom 10px
+                  font-weight 500
+
+                .g-team-member-link
+                  font-size 12px
+                  color var(--medical-primary)
+                  font-weight 600
+                  text-decoration none
+                  transition all 0.3s ease
+
+                  &:hover
+                    color var(--medical-secondary)
+
+            // Responsive design for team grid
+            @media (max-width: 768px)
+              grid-template-columns repeat(auto-fit, minmax(150px, 1fr))
+              gap 15px
+
+              .g-team-member
+                padding 20px
+
+                .g-team-member-info
+                  .g-team-member-name
+                    font-size 16px
+
+                  .g-team-member-role
+                    font-size 13px
+
+                  .g-team-member-link
+                    font-size 11px
+
+            @media (max-width: 480px)
+              grid-template-columns 1fr
+              gap 12px
+
+              .g-team-member
+                padding 15px
+
+                .g-team-member-info
+                  .g-team-member-name
+                    font-size 15px
+
+                  .g-team-member-role
+                    font-size 12px
+
+                  .g-team-member-link
+                    font-size 10px
 
         .g-gallery
           display grid
@@ -449,3 +795,12 @@
 
           i
             font-size 18px
+
+// Keyframe animations
+@keyframes fadeInUp
+  from
+    opacity 0
+    transform translateY(30px)
+  to
+    opacity 1
+    transform translateY(0)

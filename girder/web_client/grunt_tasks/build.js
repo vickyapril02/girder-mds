@@ -183,6 +183,10 @@ module.exports = function (grunt) {
                         from: 'static/img/Girder_Favicon.png',
                         to: grunt.config.get('builtPath'),
                         toType: 'dir'
+                    }, {
+                        from: 'static/img/meditwin_partners.png',
+                        to: grunt.config.get('builtPath'),
+                        toType: 'dir'
                     }])
                 ]
             }
