@@ -1,8 +1,8 @@
 /**
- * Translation utility for multi-language localization
+ * Translation utility for MDS-Data platform (English only)
  */
 
-// English translations
+// English translations for MDS-Data
 const englishTranslations = {
     // Common UI elements
     'Login': 'Login',
@@ -12,80 +12,76 @@ const englishTranslations = {
     'Passwords do not match, try again.': 'Passwords do not match, try again.',
     
     // Front page content
-    'Meditwin brings together French science and technology excellence around virtual twins for the future of medical care': 'Meditwin brings together French science and technology excellence around virtual twins for the future of medical care',
-    'MEDITWIN Platform': 'MEDITWIN Platform',
-    'Building the future of personalized medicine through digital twins': 'Building the future of personalized medicine through digital twins',
+    'MDS-Data brings together advanced data science and multimodal analytics for comprehensive data management and visualization': 'MDS-Data brings together advanced data science and multimodal analytics for comprehensive data management and visualization',
+    'MDS-Data Platform': 'MDS-Data Platform',
+    'Building the future of data science through multimodal analytics': 'Building the future of data science through multimodal analytics',
     'Explore Platform': 'Explore Platform',
     'Learn More': 'Learn More',
     'Our Project': 'Our Project',
-    'MEDITWIN is revolutionizing healthcare with personalized virtual twins of organs, metabolism, and tumors to improve diagnosis and treatment. Seven medical innovations in neurology, cardiology, and oncology will be developed and deployed via a sovereign industrial cloud platform. Led by Dassault Systèmes and top medical institutions, MEDITWIN sets a new global standard for virtual healthcare.': 'MEDITWIN is revolutionizing healthcare with personalized virtual twins of organs, metabolism, and tumors to improve diagnosis and treatment. Seven medical innovations in neurology, cardiology, and oncology will be developed and deployed via a sovereign industrial cloud platform. Led by Dassault Systèmes and top medical institutions, MEDITWIN sets a new global standard for virtual healthcare.',
+    'MDS-Data is revolutionizing data science with advanced multimodal analytics, machine learning, and visualization capabilities. Our platform enables researchers and data scientists to manage, analyze, and visualize complex datasets across multiple modalities. Built for scalability and performance, MDS-Data sets a new standard for data science platforms.': 'MDS-Data is revolutionizing data science with advanced multimodal analytics, machine learning, and visualization capabilities. Our platform enables researchers and data scientists to manage, analyze, and visualize complex datasets across multiple modalities. Built for scalability and performance, MDS-Data sets a new standard for data science platforms.',
     
     // Key Domains
-    'Key Medical Domains': 'Key Medical Domains',
-    'Neurology': 'Neurology',
-    'Brain digital twins for epilepsy and stroke prediction': 'Brain digital twins for epilepsy and stroke prediction',
-    'Cardiology': 'Cardiology',
-    'Heart modeling for rhythm and ischemia analysis': 'Heart modeling for rhythm and ischemia analysis',
-    'Oncology': 'Oncology',
-    'Tumor simulation for targeted treatment planning': 'Tumor simulation for targeted treatment planning',
+    'Key Data Science Domains': 'Key Data Science Domains',
+    'Machine Learning': 'Machine Learning',
+    'Advanced ML algorithms for pattern recognition and predictive modeling': 'Advanced ML algorithms for pattern recognition and predictive modeling',
+    'Data Visualization': 'Data Visualization',
+    'Interactive visualizations for complex data exploration and analysis': 'Interactive visualizations for complex data exploration and analysis',
+    'Multimodal Analytics': 'Multimodal Analytics',
+    'Integration and analysis of diverse data types and sources': 'Integration and analysis of diverse data types and sources',
     
     // Features
-    'Advanced Research Tools': 'Advanced Research Tools',
-    'Analyze, annotate, and visualize multi-modal medical data': 'Analyze, annotate, and visualize multi-modal medical data',
+    'Advanced Analytics Tools': 'Advanced Analytics Tools',
+    'Analyze, process, and visualize multimodal scientific data': 'Analyze, process, and visualize multimodal scientific data',
     'Data Integration': 'Data Integration',
-    'Combine imaging, genomics, and clinical data in one place': 'Combine imaging, genomics, and clinical data in one place',
+    'Combine structured and unstructured data from multiple sources': 'Combine structured and unstructured data from multiple sources',
     'Secure Data Management': 'Secure Data Management',
-    'Full HIPAA and GDPR compliance for medical data': 'Full HIPAA and GDPR compliance for medical data',
+    'Enterprise-grade security and compliance for sensitive data': 'Enterprise-grade security and compliance for sensitive data',
     'Collaborative Workspaces': 'Collaborative Workspaces',
-    'Create shared projects between hospitals and research labs': 'Create shared projects between hospitals and research labs',
-    'Real-Time Analytics': 'Real-Time Analytics',
-    'Streamlined dashboards and live metrics for decision-making': 'Streamlined dashboards and live metrics for decision-making',
-    'Dassault Systèmes Integration': 'Dassault Systèmes Integration',
-    'Powered by industry-leading 3D modeling and simulation technology': 'Powered by industry-leading 3D modeling and simulation technology',
+    'Create shared projects between research teams and institutions': 'Create shared projects between research teams and institutions',
+    'Real-Time Processing': 'Real-Time Processing',
+    'Streamlined workflows and live analytics for data-driven decisions': 'Streamlined workflows and live analytics for data-driven decisions',
+    'Trame Integration': 'Trame Integration',
+    'Powered by industry-leading visualization and interactive computing technology': 'Powered by industry-leading visualization and interactive computing technology',
     
     // Partners
     'Consortium & Partners': 'Consortium & Partners',
-    'Dassault Systèmes': 'Dassault Systèmes',
+    'Data Science Institute': 'Data Science Institute',
     'Technology Partner': 'Technology Partner',
-    'IHU LIRYC': 'IHU LIRYC',
+    'Research University': 'Research University',
     'Lead Institution': 'Lead Institution',
-    'Bordeaux University Hospital': 'Bordeaux University Hospital',
-    'Clinical Partner': 'Clinical Partner',
-    'Inserm': 'Inserm',
+    'Industry Partner': 'Industry Partner',
+    'Commercial Partner': 'Commercial Partner',
+    'Academic Collaborators': 'Academic Collaborators',
     'Research Partner': 'Research Partner',
-    'CNRS': 'CNRS',
-    'Academic Partner': 'Academic Partner',
-    'International Collaborators': 'International Collaborators',
-    'Global Network': 'Global Network',
+    'International Network': 'International Network',
+    'Global Collaborators': 'Global Collaborators',
+    'Worldwide Network': 'Worldwide Network',
     
     // Recent Projects
     'Recent Projects': 'Recent Projects',
-    'Beat-AF': 'Beat-AF',
-    'THE BEAT-AF PROJECT': 'THE BEAT-AF PROJECT',
-    'The BEAT-AF, Ground-BrEAking Electroporation-based inTervention for Atrial Fibrillation treatment is an action funded by the European Commission for 60 months and started on March, 1st, 2021. It is part of the HADEA agency (European Health and Digital Executive Agency).': 'The BEAT-AF, Ground-BrEAking Electroporation-based inTervention for Atrial Fibrillation treatment is an action funded by the European Commission for 60 months and started on March, 1st, 2021. It is part of the HADEA agency (European Health and Digital Executive Agency).',
-    'The BEAT-AF consortium regroup 9 partners all over Europe (France, Germany, Belgium, Austria, Czechia) presented in the "meet the centers". The coordinator is Pr Pierre Jaïs from Bordeaux University.': 'The BEAT-AF consortium regroup 9 partners all over Europe (France, Germany, Belgium, Austria, Czechia) presented in the "meet the centers". The coordinator is Pr Pierre Jaïs from Bordeaux University.',
-    'InEurHeart': 'InEurHeart',
-    'AI, Digital Twin & Clinical Trial for a Disruption in Catheter Ablation': 'AI, Digital Twin & Clinical Trial for a Disruption in Catheter Ablation',
-    'inEurHeart is an innovation project in Artificial Intelligence, Digital Twin & Clinical Trial for a Disruption in Catheter Ablation for Ventricular Tachycardia, making ablation therapy accessible to most patients.': 'inEurHeart is an innovation project in Artificial Intelligence, Digital Twin & Clinical Trial for a Disruption in Catheter Ablation for Ventricular Tachycardia, making ablation therapy accessible to most patients.',
-    'This project is a collaborative project between 5 organizations in France and Netherlands funded by EIT Health – the European Institute of Innovation and Technology, co-funded by the European Union. This project will exemplify how the academic-industrial relationships can be fostered and can lead to drastic changes in clinical practice.': 'This project is a collaborative project between 5 organizations in France and Netherlands funded by EIT Health – the European Institute of Innovation and Technology, co-funded by the European Union. This project will exemplify how the academic-industrial relationships can be fostered and can lead to drastic changes in clinical practice.',
+    'Multimodal Analysis': 'Multimodal Analysis',
+    'THE MULTIMODAL ANALYSIS PROJECT': 'THE MULTIMODAL ANALYSIS PROJECT',
+    'The Multimodal Analysis project focuses on developing advanced algorithms for processing and analyzing diverse data types including images, text, and numerical data. This project is funded for 36 months and represents a breakthrough in data science methodology.': 'The Multimodal Analysis project focuses on developing advanced algorithms for processing and analyzing diverse data types including images, text, and numerical data. This project is funded for 36 months and represents a breakthrough in data science methodology.',
+    'The project brings together 8 research institutions across multiple countries, coordinated by leading data science researchers.': 'The project brings together 8 research institutions across multiple countries, coordinated by leading data science researchers.',
+    'Data Visualization': 'Data Visualization',
+    'AI, Machine Learning & Interactive Visualization for Data Science': 'AI, Machine Learning & Interactive Visualization for Data Science',
+    'Data Visualization is an innovation project in Artificial Intelligence, Machine Learning & Interactive Visualization for advanced data science applications, making complex data analysis accessible to researchers and practitioners.': 'Data Visualization is an innovation project in Artificial Intelligence, Machine Learning & Interactive Visualization for advanced data science applications, making complex data analysis accessible to researchers and practitioners.',
+    'This project is a collaborative effort between 6 organizations in academia and industry, funded by the National Science Foundation and industry partners. This project demonstrates how academic-industrial partnerships can drive innovation in data science.': 'This project is a collaborative effort between 6 organizations in academia and industry, funded by the National Science Foundation and industry partners. This project demonstrates how academic-industrial partnerships can drive innovation in data science.',
     'Learn More': 'Learn More',
     
     // About section
     'About Us': 'About Us',
-    'Meditwin is developed by a team of medical professionals, data scientists, and software engineers dedicated to advancing healthcare through technology. We are committed to providing innovative solutions that improve patient outcomes and accelerate medical research.': 'Meditwin is developed by a team of medical professionals, data scientists, and software engineers dedicated to advancing healthcare through technology. We are committed to providing innovative solutions that improve patient outcomes and accelerate medical research.',
-    'We manage the data management platform that enables seamless collaboration between medical teams and research institutions, providing secure and efficient data handling for clinical research and patient care.': 'We manage the data management platform that enables seamless collaboration between medical teams and research institutions, providing secure and efficient data handling for clinical research and patient care.',
+    'MDS-Data is developed by a team of data scientists, software engineers, and researchers dedicated to advancing data science through innovative technology. We are committed to providing cutting-edge solutions that accelerate research and enable breakthrough discoveries.': 'MDS-Data is developed by a team of data scientists, software engineers, and researchers dedicated to advancing data science through innovative technology. We are committed to providing cutting-edge solutions that accelerate research and enable breakthrough discoveries.',
+    'We manage the data science platform that enables seamless collaboration between research teams and institutions, providing powerful and efficient data handling for scientific research and analysis.': 'We manage the data science platform that enables seamless collaboration between research teams and institutions, providing powerful and efficient data handling for scientific research and analysis.',
     'Our Team': 'Our Team',
-    'Maxime Sermesant': 'Maxime Sermesant',
-    'Head': 'Head',
-    'Vicky': 'Vicky',
-    'Buntheng': 'Buntheng',
-    'Florent': 'Florent',
+    'Data Science Lead': 'Data Science Lead',
+    'Research Director': 'Research Director',
     'Team Member': 'Team Member',
     'View Profile': 'View Profile',
     'Contact:': 'Contact:',
     'Institution:': 'Institution:',
     'Location:': 'Location:',
-    'Bordeaux, France': 'Bordeaux, France',
+    'Research Center': 'Research Center',
     
     // User account
     'Email': 'Email',
@@ -122,11 +118,6 @@ const englishTranslations = {
     'Warning': 'Warning',
     'Info': 'Info',
     
-    // Language switcher
-    'Language': 'Language',
-    'English': 'English',
-    'Français': 'Français',
-    
     // Folder dropdown navigation
     'Folder Navigation': 'Folder Navigation',
     'Select All': 'Select All',
@@ -135,6 +126,7 @@ const englishTranslations = {
     'No folders found': 'No folders found',
     'Expand': 'Expand',
     'Collapse': 'Collapse',
+    
     // Landing page
     'Welcome to': 'Welcome to',
     'You are currently browsing anonymously.': 'You are currently browsing anonymously.',
@@ -164,292 +156,79 @@ const englishTranslations = {
     'GitHub repository': 'GitHub repository',
     'To use the REST API to interact with this server, check out the': 'To use the REST API to interact with this server, check out the',
     'interactive web API docs': 'interactive web API docs',
-            'This instance of': 'This instance of',
-            'was built from version': 'was built from version',
-            // Meditwin Landing Page
-            'Meditwin brings together French science and technology excellence around virtual twins for the future of medical care': 'Meditwin brings together French science and technology excellence around virtual twins for the future of medical care',
-            'Meditwin Complex Data Platform': 'Meditwin Complex Data Platform',
-            'Manage, explore, and share your data securely': 'Manage, explore, and share your data securely',
-            'Our Project': 'Our Project',
-            'MEDITWIN is revolutionizing healthcare with personalized virtual twins of organs, metabolism, and tumors to improve diagnosis and treatment. Seven medical innovations in neurology, cardiology, and oncology will be developed and deployed via a sovereign industrial cloud platform. Led by Dassault Systèmes and top medical institutions, MEDITWIN sets a new global standard for virtual healthcare.': 'MEDITWIN is revolutionizing healthcare with personalized virtual twins of organs, metabolism, and tumors to improve diagnosis and treatment. Seven medical innovations in neurology, cardiology, and oncology will be developed and deployed via a sovereign industrial cloud platform. Led by Dassault Systèmes and top medical institutions, MEDITWIN sets a new global standard for virtual healthcare.',
-            'Advanced Research Tools': 'Advanced Research Tools',
-            'State-of-the-art data analysis and visualization capabilities for medical research': 'State-of-the-art data analysis and visualization capabilities for medical research',
-            'HIPAA Compliant': 'HIPAA Compliant',
-            'Full compliance with medical data protection regulations and standards': 'Full compliance with medical data protection regulations and standards',
-            'Collaborative Platform': 'Collaborative Platform',
-            'Enable seamless collaboration between medical teams and research institutions': 'Enable seamless collaboration between medical teams and research institutions',
-            'Real-time Analytics': 'Real-time Analytics',
-            'Live data processing and insights for immediate clinical decision support': 'Live data processing and insights for immediate clinical decision support',
-            'Recent Projects': 'Recent Projects',
-            'Beat-AF': 'Beat-AF',
-            'THE BEAT-AF PROJECT': 'THE BEAT-AF PROJECT',
-            'The BEAT-AF, Ground-BrEAking Electroporation-based inTervention for Atrial Fibrillation treatment is an action funded by the European Commission for 60 months and started on March, 1st, 2021. It is part of the HADEA agency (European Health and Digital Executive Agency).': 'The BEAT-AF, Ground-BrEAking Electroporation-based inTervention for Atrial Fibrillation treatment is an action funded by the European Commission for 60 months and started on March, 1st, 2021. It is part of the HADEA agency (European Health and Digital Executive Agency).',
-            'The BEAT-AF consortium regroup 9 partners all over Europe (France, Germany, Belgium, Austria, Czechia) presented in the "meet the centers". The coordinator is Pr Pierre Jaïs from Bordeaux University.': 'The BEAT-AF consortium regroup 9 partners all over Europe (France, Germany, Belgium, Austria, Czechia) presented in the "meet the centers". The coordinator is Pr Pierre Jaïs from Bordeaux University.',
-            'InEurHeart': 'InEurHeart',
-            'AI, Digital Twin & Clinical Trial for a Disruption in Catheter Ablation': 'AI, Digital Twin & Clinical Trial for a Disruption in Catheter Ablation',
-            'inEurHeart is an innovation project in Artificial Intelligence, Digital Twin & Clinical Trial for a Disruption in Catheter Ablation for Ventricular Tachycardia, making ablation therapy accessible to most patients.': 'inEurHeart is an innovation project in Artificial Intelligence, Digital Twin & Clinical Trial for a Disruption in Catheter Ablation for Ventricular Tachycardia, making ablation therapy accessible to most patients.',
-            'This project is a collaborative project between 5 organizations in France and Netherlands funded by EIT Health – the European Institute of Innovation and Technology, co-funded by the European Union. This project will exemplify how the academic-industrial relationships can be fostered and can lead to drastic changes in clinical practice.': 'This project is a collaborative project between 5 organizations in France and Netherlands funded by EIT Health – the European Institute of Innovation and Technology, co-funded by the European Union. This project will exemplify how the academic-industrial relationships can be fostered and can lead to drastic changes in clinical practice.',
-            'Learn More': 'Learn More',
-            'About Us': 'About Us',
-            'Meditwin is developed by a team of medical professionals, data scientists, and software engineers dedicated to advancing healthcare through technology. We are committed to providing innovative solutions that improve patient outcomes and accelerate medical research.': 'Meditwin is developed by a team of medical professionals, data scientists, and software engineers dedicated to advancing healthcare through technology. We are committed to providing innovative solutions that improve patient outcomes and accelerate medical research.',
-            'We manage the data management platform that enables seamless collaboration between medical teams and research institutions, providing secure and efficient data handling for clinical research and patient care.': 'We manage the data management platform that enables seamless collaboration between medical teams and research institutions, providing secure and efficient data handling for clinical research and patient care.',
-            'Our Team': 'Our Team',
-            'Maxime Sermesant': 'Maxime Sermesant',
-            'Head': 'Head',
-            'Vicky': 'Vicky',
-            'Buntheng': 'Buntheng',
-            'Florent': 'Florent',
-            'Team Member': 'Team Member',
-            'View Profile': 'View Profile',
-            'Contact:': 'Contact:',
-            'Institution:': 'Institution:',
-            'Location:': 'Location:'
+    'This instance of': 'This instance of',
+    'was built from version': 'was built from version',
+    
+    // Tools section
+    'Tools': 'Tools',
+    'Trame': 'Trame',
+    'Interactive visualization and data exploration tool': 'Interactive visualization and data exploration tool',
+    'Paraview': 'Paraview',
+    'Scientific visualization and data analysis platform': 'Scientific visualization and data analysis platform',
+    'LGE': 'LGE',
+    'LGE Segmentation Tool': 'LGE Segmentation Tool',
+    
+    // MDS-Data Landing Page
+    'MDS-Data brings together advanced data science and multimodal analytics for comprehensive data management and visualization': 'MDS-Data brings together advanced data science and multimodal analytics for comprehensive data management and visualization',
+    'MDS-Data Platform': 'MDS-Data Platform',
+    'Manage, explore, and analyze your data with advanced tools': 'Manage, explore, and analyze your data with advanced tools',
+    'Our Project': 'Our Project',
+    'MDS-Data is revolutionizing data science with advanced multimodal analytics, machine learning, and visualization capabilities. Our platform enables researchers and data scientists to manage, analyze, and visualize complex datasets across multiple modalities. Built for scalability and performance, MDS-Data sets a new standard for data science platforms.': 'MDS-Data is revolutionizing data science with advanced multimodal analytics, machine learning, and visualization capabilities. Our platform enables researchers and data scientists to manage, analyze, and visualize complex datasets across multiple modalities. Built for scalability and performance, MDS-Data sets a new standard for data science platforms.',
+    'Advanced Analytics Tools': 'Advanced Analytics Tools',
+    'State-of-the-art data analysis and visualization capabilities for research': 'State-of-the-art data analysis and visualization capabilities for research',
+    'Enterprise Security': 'Enterprise Security',
+    'Full compliance with data protection regulations and security standards': 'Full compliance with data protection regulations and security standards',
+    'Collaborative Platform': 'Collaborative Platform',
+    'Enable seamless collaboration between research teams and institutions': 'Enable seamless collaboration between research teams and institutions',
+    'Real-time Analytics': 'Real-time Analytics',
+    'Live data processing and insights for immediate research decisions': 'Live data processing and insights for immediate research decisions',
+    'Recent Projects': 'Recent Projects',
+    'Multimodal Analysis': 'Multimodal Analysis',
+    'THE MULTIMODAL ANALYSIS PROJECT': 'THE MULTIMODAL ANALYSIS PROJECT',
+    'The Multimodal Analysis project focuses on developing advanced algorithms for processing and analyzing diverse data types including images, text, and numerical data. This project is funded for 36 months and represents a breakthrough in data science methodology.': 'The Multimodal Analysis project focuses on developing advanced algorithms for processing and analyzing diverse data types including images, text, and numerical data. This project is funded for 36 months and represents a breakthrough in data science methodology.',
+    'The project brings together 8 research institutions across multiple countries, coordinated by leading data science researchers.': 'The project brings together 8 research institutions across multiple countries, coordinated by leading data science researchers.',
+    'Data Visualization': 'Data Visualization',
+    'AI, Machine Learning & Interactive Visualization for Data Science': 'AI, Machine Learning & Interactive Visualization for Data Science',
+    'Data Visualization is an innovation project in Artificial Intelligence, Machine Learning & Interactive Visualization for advanced data science applications, making complex data analysis accessible to researchers and practitioners.': 'Data Visualization is an innovation project in Artificial Intelligence, Machine Learning & Interactive Visualization for advanced data science applications, making complex data analysis accessible to researchers and practitioners.',
+    'This project is a collaborative effort between 6 organizations in academia and industry, funded by the National Science Foundation and industry partners. This project demonstrates how academic-industrial partnerships can drive innovation in data science.': 'This project is a collaborative effort between 6 organizations in academia and industry, funded by the National Science Foundation and industry partners. This project demonstrates how academic-industrial partnerships can drive innovation in data science.',
+    'Learn More': 'Learn More',
+    'About Us': 'About Us',
+    'MDS-Data is developed by a team of data scientists, software engineers, and researchers dedicated to advancing data science through innovative technology. We are committed to providing cutting-edge solutions that accelerate research and enable breakthrough discoveries.': 'MDS-Data is developed by a team of data scientists, software engineers, and researchers dedicated to advancing data science through innovative technology. We are committed to providing cutting-edge solutions that accelerate research and enable breakthrough discoveries.',
+    'We manage the data science platform that enables seamless collaboration between research teams and institutions, providing powerful and efficient data handling for scientific research and analysis.': 'We manage the data science platform that enables seamless collaboration between research teams and institutions, providing powerful and efficient data handling for scientific research and analysis.',
+    'Our Team': 'Our Team',
+    'Data Science Lead': 'Data Science Lead',
+    'Research Director': 'Research Director',
+    'Team Member': 'Team Member',
+    'View Profile': 'View Profile',
+    'Contact:': 'Contact:',
+    'Institution:': 'Institution:',
+    'Location:': 'Location:'
 };
-
-// French translations
-const frenchTranslations = {
-    // Common UI elements
-    'Login': 'Connexion',
-    'Sign up': 'S\'inscrire',
-    'Info saved.': 'Informations sauvegardées.',
-    'Password changed.': 'Mot de passe modifié.',
-    'Passwords do not match, try again.': 'Les mots de passe ne correspondent pas, réessayez.',
-    
-    // Front page content
-    'Meditwin brings together French science and technology excellence around virtual twins for the future of medical care': 'Meditwin rassemble l\'excellence française en science et technologie autour des jumeaux virtuels pour l\'avenir des soins médicaux',
-    'MEDITWIN Platform': 'Plateforme MEDITWIN',
-    'Building the future of personalized medicine through digital twins': 'Construire l\'avenir de la médecine personnalisée grâce aux jumeaux numériques',
-    'Explore Platform': 'Explorer la Plateforme',
-    'Learn More': 'En Savoir Plus',
-    'Our Project': 'Notre Projet',
-    'MEDITWIN is revolutionizing healthcare with personalized virtual twins of organs, metabolism, and tumors to improve diagnosis and treatment. Seven medical innovations in neurology, cardiology, and oncology will be developed and deployed via a sovereign industrial cloud platform. Led by Dassault Systèmes and top medical institutions, MEDITWIN sets a new global standard for virtual healthcare.': 'MEDITWIN révolutionne la santé grâce à des jumeaux virtuels personnalisés des organes, du métabolisme et des tumeurs pour mieux diagnostiquer et soigner. Sept innovations médicales en neurologie, cardiologie et oncologie seront développées et déployées via une plateforme cloud souveraine. Porté par Dassault Systèmes et des institutions médicales d\'excellence, MEDITWIN établit un nouveau standard mondial en santé virtuelle.',
-    
-    // Key Domains
-    'Key Medical Domains': 'Domaines Médicaux Clés',
-    'Neurology': 'Neurologie',
-    'Brain digital twins for epilepsy and stroke prediction': 'Jumeaux numériques du cerveau pour la prédiction d\'épilepsie et d\'AVC',
-    'Cardiology': 'Cardiologie',
-    'Heart modeling for rhythm and ischemia analysis': 'Modélisation cardiaque pour l\'analyse du rythme et de l\'ischémie',
-    'Oncology': 'Oncologie',
-    'Tumor simulation for targeted treatment planning': 'Simulation tumorale pour la planification de traitements ciblés',
-    
-    // Features
-    'Advanced Research Tools': 'Outils de Recherche Avancés',
-    'Analyze, annotate, and visualize multi-modal medical data': 'Analyser, annoter et visualiser des données médicales multi-modales',
-    'Data Integration': 'Intégration de Données',
-    'Combine imaging, genomics, and clinical data in one place': 'Combiner imagerie, génomique et données cliniques en un seul endroit',
-    'Secure Data Management': 'Gestion Sécurisée des Données',
-    'Full HIPAA and GDPR compliance for medical data': 'Conformité totale HIPAA et RGPD pour les données médicales',
-    'Collaborative Workspaces': 'Espaces de Travail Collaboratifs',
-    'Create shared projects between hospitals and research labs': 'Créer des projets partagés entre hôpitaux et laboratoires de recherche',
-    'Real-Time Analytics': 'Analyses en Temps Réel',
-    'Streamlined dashboards and live metrics for decision-making': 'Tableaux de bord rationalisés et métriques en direct pour la prise de décision',
-    'Dassault Systèmes Integration': 'Intégration Dassault Systèmes',
-    'Powered by industry-leading 3D modeling and simulation technology': 'Alimenté par une technologie de modélisation et simulation 3D leader de l\'industrie',
-    
-    // Partners
-    'Consortium & Partners': 'Consortium et Partenaires',
-    'Dassault Systèmes': 'Dassault Systèmes',
-    'Technology Partner': 'Partenaire Technologique',
-    'IHU LIRYC': 'IHU LIRYC',
-    'Lead Institution': 'Institution Pilote',
-    'Bordeaux University Hospital': 'CHU de Bordeaux',
-    'Clinical Partner': 'Partenaire Clinique',
-    'Inserm': 'Inserm',
-    'Research Partner': 'Partenaire de Recherche',
-    'CNRS': 'CNRS',
-    'Academic Partner': 'Partenaire Académique',
-    'International Collaborators': 'Collaborateurs Internationaux',
-    'Global Network': 'Réseau Mondial',
-    
-    // Recent Projects
-    'Recent Projects': 'Projets Récents',
-    'Beat-AF': 'Beat-AF',
-    'THE BEAT-AF PROJECT': 'LE PROJET BEAT-AF',
-    'The BEAT-AF, Ground-BrEAking Electroporation-based inTervention for Atrial Fibrillation treatment is an action funded by the European Commission for 60 months and started on March, 1st, 2021. It is part of the HADEA agency (European Health and Digital Executive Agency).': 'BEAT-AF, Intervention Révolutionnaire basée sur l\'Électroporation pour le Traitement de la Fibrillation Auriculaire est une action financée par la Commission Européenne pour 60 mois et commencée le 1er mars 2021. Elle fait partie de l\'agence HADEA (Agence Exécutive Européenne de la Santé et du Numérique).',
-    'The BEAT-AF consortium regroup 9 partners all over Europe (France, Germany, Belgium, Austria, Czechia) presented in the "meet the centers". The coordinator is Pr Pierre Jaïs from Bordeaux University.': 'Le consortium BEAT-AF regroupe 9 partenaires dans toute l\'Europe (France, Allemagne, Belgique, Autriche, République Tchèque) présentés dans "rencontrez les centres". Le coordinateur est le Pr Pierre Jaïs de l\'Université de Bordeaux.',
-    'InEurHeart': 'InEurHeart',
-    'AI, Digital Twin & Clinical Trial for a Disruption in Catheter Ablation': 'IA, Jumeau Numérique et Essai Clinique pour une Disruption dans l\'Ablation par Cathéter',
-    'inEurHeart is an innovation project in Artificial Intelligence, Digital Twin & Clinical Trial for a Disruption in Catheter Ablation for Ventricular Tachycardia, making ablation therapy accessible to most patients.': 'inEurHeart est un projet d\'innovation en Intelligence Artificielle, Jumeau Numérique et Essai Clinique pour une Disruption dans l\'Ablation par Cathéter pour la Tachycardie Ventriculaire, rendant la thérapie d\'ablation accessible à la plupart des patients.',
-    'This project is a collaborative project between 5 organizations in France and Netherlands funded by EIT Health – the European Institute of Innovation and Technology, co-funded by the European Union. This project will exemplify how the academic-industrial relationships can be fostered and can lead to drastic changes in clinical practice.': 'Ce projet est un projet collaboratif entre 5 organisations en France et aux Pays-Bas financé par EIT Health – l\'Institut Européen d\'Innovation et de Technologie, co-financé par l\'Union Européenne. Ce projet illustrera comment les relations académico-industrielles peuvent être favorisées et peuvent conduire à des changements drastiques dans la pratique clinique.',
-    'Learn More': 'En Savoir Plus',
-    
-    // About section
-    'About Us': 'À Propos de Nous',
-    'Meditwin is developed by a team of medical professionals, data scientists, and software engineers dedicated to advancing healthcare through technology. We are committed to providing innovative solutions that improve patient outcomes and accelerate medical research.': 'Meditwin est développé par une équipe de professionnels de la santé, de scientifiques des données et d\'ingénieurs logiciels dédiés à l\'amélioration des soins de santé par la technologie. Nous nous engageons à fournir des solutions innovantes qui améliorent les résultats des patients et accélèrent la recherche médicale.',
-    'We manage the data management platform that enables seamless collaboration between medical teams and research institutions, providing secure and efficient data handling for clinical research and patient care.': 'Nous gérons la plateforme de gestion de données qui permet une collaboration transparente entre les équipes médicales et les institutions de recherche, fournissant une gestion sécurisée et efficace des données pour la recherche clinique et les soins aux patients.',
-    'Our Team': 'Notre Équipe',
-    'Maxime Sermesant': 'Maxime Sermesant',
-    'Head': 'Chef',
-    'Vicky': 'Vicky',
-    'Buntheng': 'Buntheng',
-    'Florent': 'Florent',
-    'Team Member': 'Membre de l\'Équipe',
-    'View Profile': 'Voir le Profil',
-    'Contact:': 'Contact :',
-    'Institution:': 'Institution :',
-    'Location:': 'Localisation :',
-    'Bordeaux, France': 'Bordeaux, France',
-    
-    // User account
-    'Email': 'Email',
-    'First Name': 'Prénom',
-    'Last Name': 'Nom',
-    'Admin': 'Administrateur',
-    'Old Password': 'Ancien Mot de Passe',
-    'New Password': 'Nouveau Mot de Passe',
-    'Retype Password': 'Retapez le Mot de Passe',
-    'Change Password': 'Changer le Mot de Passe',
-    'API Keys': 'Clés API',
-    'Two-Factor Authentication': 'Authentification à Deux Facteurs',
-    
-    // Collections and navigation
-    'Collections': 'Collections',
-    'Users': 'Utilisateurs',
-    'Groups': 'Groupes',
-    'Admin Panel': 'Panneau d\'Administration',
-    'Search': 'Rechercher',
-    'Upload': 'Télécharger',
-    'Download': 'Télécharger',
-    'Delete': 'Supprimer',
-    'Edit': 'Modifier',
-    'Create': 'Créer',
-    'Save': 'Sauvegarder',
-    'Cancel': 'Annuler',
-    'Close': 'Fermer',
-    'Back': 'Retour',
-    'Next': 'Suivant',
-    'Previous': 'Précédent',
-    'Loading...': 'Chargement...',
-    'Error': 'Erreur',
-    'Success': 'Succès',
-    'Warning': 'Avertissement',
-    'Info': 'Information',
-    
-    // Language switcher
-    'Language': 'Langue',
-    'English': 'English',
-    'Français': 'Français',
-    
-    // Folder dropdown navigation
-    'Folder Navigation': 'Navigation des Dossiers',
-    'Select All': 'Tout Sélectionner',
-    'Loading folders...': 'Chargement des dossiers...',
-    'Error loading folders': 'Erreur lors du chargement des dossiers',
-    'No folders found': 'Aucun dossier trouvé',
-    'Expand': 'Développer',
-    'Collapse': 'Réduire',
-    // Landing page
-    'Welcome to': 'Bienvenue sur',
-    'You are currently browsing anonymously.': 'Vous naviguez actuellement de manière anonyme.',
-    'To explore the data hosted on this server, start with the': 'Pour explorer les données hébergées sur ce serveur, commencez par la page',
-    'page.': '.',
-    'To create an account, use the': 'Pour créer un compte, utilisez le lien',
-    'link in the upper right corner.': 'dans le coin supérieur droit.',
-    'If you already have an account you can': 'Si vous avez déjà un compte, vous pouvez vous',
-    'log in': 'connecter',
-    'with the link in the upper right corner.': 'avec le lien dans le coin supérieur droit.',
-    'You are currently logged in as': 'Vous êtes actuellement connecté en tant que',
-    'personal data space': 'espace de données personnel',
-    'or your': 'ou votre',
-    'user account page': 'page de compte utilisateur',
-    'Girder is': 'Girder est',
-    'is powered by Girder,': 'est alimenté par Girder,',
-    'Kitware\'s open-source platform for data management, analytics, and visualization. To learn more about how Kitware and Girder can help to solve your data challenges, read our series of': 'plateforme open-source de Kitware pour la gestion de données, l\'analyse et la visualisation. Pour en savoir plus sur la façon dont Kitware et Girder peuvent vous aider à résoudre vos défis de données, lisez notre série de',
-    'blog posts': 'articles de blog',
-    'or': 'ou',
-    'contact us': 'contactez-nous',
-    'directly.': 'directement.',
-    'To learn more about Girder\'s software, including how you can host your own instance either locally or in the cloud, see the': 'Pour en savoir plus sur le logiciel Girder, y compris comment vous pouvez héberger votre propre instance localement ou dans le cloud, consultez le',
-    'User Guide': 'Guide de l\'utilisateur',
-    'the': 'la',
-    'full documentation': 'documentation complète',
-    'or visit the': 'ou visitez le',
-    'GitHub repository': 'dépôt GitHub',
-    'To use the REST API to interact with this server, check out the': 'Pour utiliser l\'API REST pour interagir avec ce serveur, consultez la',
-    'interactive web API docs': 'documentation interactive de l\'API web',
-            'This instance of': 'Cette instance de',
-            'was built from version': 'a été construite à partir de la version',
-            // Meditwin Landing Page
-            'Meditwin brings together French science and technology excellence around virtual twins for the future of medical care': 'Meditwin rassemble l\'excellence française en science et technologie autour des jumeaux virtuels pour l\'avenir des soins médicaux',
-            'Meditwin Complex Data Platform': 'Plateforme de Données Complexes Meditwin',
-            'Manage, explore, and share your data securely': 'Gérez, explorez et partagez vos données en toute sécurité',
-            'Our Project': 'Notre Projet',
-            'MEDITWIN is revolutionizing healthcare with personalized virtual twins of organs, metabolism, and tumors to improve diagnosis and treatment. Seven medical innovations in neurology, cardiology, and oncology will be developed and deployed via a sovereign industrial cloud platform. Led by Dassault Systèmes and top medical institutions, MEDITWIN sets a new global standard for virtual healthcare.': 'MEDITWIN révolutionne la santé grâce à des jumeaux virtuels personnalisés des organes, du métabolisme et des tumeurs pour mieux diagnostiquer et soigner. Sept innovations médicales en neurologie, cardiologie et oncologie seront développées et déployées via une plateforme cloud souveraine. Porté par Dassault Systèmes et des institutions médicales d\'excellence, MEDITWIN établit un nouveau standard mondial en santé virtuelle.',
-            'Advanced Research Tools': 'Outils de Recherche Avancés',
-            'State-of-the-art data analysis and visualization capabilities for medical research': 'Capacités d\'analyse et de visualisation de données de pointe pour la recherche médicale',
-            'HIPAA Compliant': 'Conforme HIPAA',
-            'Full compliance with medical data protection regulations and standards': 'Conformité totale aux réglementations et standards de protection des données médicales',
-            'Collaborative Platform': 'Plateforme Collaborative',
-            'Enable seamless collaboration between medical teams and research institutions': 'Permettre une collaboration transparente entre les équipes médicales et les institutions de recherche',
-            'Real-time Analytics': 'Analyses en Temps Réel',
-            'Live data processing and insights for immediate clinical decision support': 'Traitement de données en direct et insights pour un support décisionnel clinique immédiat',
-            'Recent Projects': 'Projets Récents',
-            'Beat-AF': 'Beat-AF',
-            'THE BEAT-AF PROJECT': 'LE PROJET BEAT-AF',
-            'The BEAT-AF, Ground-BrEAking Electroporation-based inTervention for Atrial Fibrillation treatment is an action funded by the European Commission for 60 months and started on March, 1st, 2021. It is part of the HADEA agency (European Health and Digital Executive Agency).': 'BEAT-AF, Intervention Révolutionnaire basée sur l\'Électroporation pour le Traitement de la Fibrillation Auriculaire est une action financée par la Commission Européenne pour 60 mois et commencée le 1er mars 2021. Elle fait partie de l\'agence HADEA (Agence Exécutive Européenne de la Santé et du Numérique).',
-            'The BEAT-AF consortium regroup 9 partners all over Europe (France, Germany, Belgium, Austria, Czechia) presented in the "meet the centers". The coordinator is Pr Pierre Jaïs from Bordeaux University.': 'Le consortium BEAT-AF regroupe 9 partenaires dans toute l\'Europe (France, Allemagne, Belgique, Autriche, République Tchèque) présentés dans "rencontrez les centres". Le coordinateur est le Pr Pierre Jaïs de l\'Université de Bordeaux.',
-            'InEurHeart': 'InEurHeart',
-            'AI, Digital Twin & Clinical Trial for a Disruption in Catheter Ablation': 'IA, Jumeau Numérique et Essai Clinique pour une Disruption dans l\'Ablation par Cathéter',
-            'inEurHeart is an innovation project in Artificial Intelligence, Digital Twin & Clinical Trial for a Disruption in Catheter Ablation for Ventricular Tachycardia, making ablation therapy accessible to most patients.': 'inEurHeart est un projet d\'innovation en Intelligence Artificielle, Jumeau Numérique et Essai Clinique pour une Disruption dans l\'Ablation par Cathéter pour la Tachycardie Ventriculaire, rendant la thérapie d\'ablation accessible à la plupart des patients.',
-            'This project is a collaborative project between 5 organizations in France and Netherlands funded by EIT Health – the European Institute of Innovation and Technology, co-funded by the European Union. This project will exemplify how the academic-industrial relationships can be fostered and can lead to drastic changes in clinical practice.': 'Ce projet est un projet collaboratif entre 5 organisations en France et aux Pays-Bas financé par EIT Health – l\'Institut Européen d\'Innovation et de Technologie, co-financé par l\'Union Européenne. Ce projet illustrera comment les relations académico-industrielles peuvent être favorisées et peuvent conduire à des changements drastiques dans la pratique clinique.',
-            'Learn More': 'En Savoir Plus',
-            'About Us': 'À Propos de Nous',
-            'Meditwin is developed by a team of medical professionals, data scientists, and software engineers dedicated to advancing healthcare through technology. We are committed to providing innovative solutions that improve patient outcomes and accelerate medical research.': 'Meditwin est développé par une équipe de professionnels de la santé, de scientifiques des données et d\'ingénieurs logiciels dédiés à l\'amélioration des soins de santé par la technologie. Nous nous engageons à fournir des solutions innovantes qui améliorent les résultats des patients et accélèrent la recherche médicale.',
-            'We manage the data management platform that enables seamless collaboration between medical teams and research institutions, providing secure and efficient data handling for clinical research and patient care.': 'Nous gérons la plateforme de gestion de données qui permet une collaboration transparente entre les équipes médicales et les institutions de recherche, fournissant une gestion sécurisée et efficace des données pour la recherche clinique et les soins aux patients.',
-            'Our Team': 'Notre Équipe',
-            'Maxime Sermesant': 'Maxime Sermesant',
-            'Head': 'Chef',
-            'Vicky': 'Vicky',
-            'Buntheng': 'Buntheng',
-            'Florent': 'Florent',
-            'Team Member': 'Membre de l\'Équipe',
-            'View Profile': 'Voir le Profil',
-            'Contact:': 'Contact :',
-            'Institution:': 'Institution :',
-            'Location:': 'Localisation :'
-};
-
-// Current language state - load from localStorage or default to French
-let currentLanguage = localStorage.getItem('meditwin-language') || 'french';
-
-// Get current translations based on language
-function getCurrentTranslations() {
-    return currentLanguage === 'french' ? frenchTranslations : englishTranslations;
-}
 
 /**
- * Translate a key based on current language
+ * Translate a key (English only for MDS-Data)
  * @param {string} key - The text to translate
  * @returns {string} - The translated text or the original key if not found
  */
 export function translate(key) {
-    const translations = getCurrentTranslations();
-    return translations[key] || key;
+    return englishTranslations[key] || key;
 }
 
 /**
- * Set the current language
- * @param {string} language - 'english' or 'french'
+ * Set the current language (always English for MDS-Data)
+ * @param {string} language - Language (ignored, always English)
  */
 export function setLanguage(language) {
-    if (language === 'english' || language === 'french') {
-        currentLanguage = language;
-        // Save language choice to localStorage for persistence
-        localStorage.setItem('meditwin-language', currentLanguage);
-        // Trigger a custom event to notify components to re-render
-        window.dispatchEvent(new CustomEvent('languageChanged', { 
-            detail: { language: currentLanguage } 
-        }));
-    }
+    // MDS-Data only supports English
+    console.log('MDS-Data platform only supports English language');
 }
 
 /**
- * Get the current language
- * @returns {string} - Current language ('english' or 'french')
+ * Get the current language (always English for MDS-Data)
+ * @returns {string} - Always returns 'english'
  */
 export function getCurrentLanguage() {
-    return currentLanguage;
+    return 'english';
 }
 
 /**
@@ -457,18 +236,16 @@ export function getCurrentLanguage() {
  * @returns {Object} - The translations object for current language
  */
 export function getTranslations() {
-    return getCurrentTranslations();
+    return englishTranslations;
 }
 
 /**
- * Add or update a translation for both languages
+ * Add or update a translation (English only for MDS-Data)
  * @param {string} key - The text key
  * @param {string} englishValue - The English translation
- * @param {string} frenchValue - The French translation
  */
-export function setTranslation(key, englishValue, frenchValue) {
+export function setTranslation(key, englishValue) {
     englishTranslations[key] = englishValue;
-    frenchTranslations[key] = frenchValue;
 }
 
 export default {
