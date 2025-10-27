@@ -8,6 +8,7 @@ import { getCurrentUser } from '@girder/core/auth';
 import { translate, setLanguage, getCurrentLanguage } from '@girder/core/utilities/translations';
 
 import '../../stylesheets/body/frontPage.styl';
+import '../../stylesheets/body/frontPage-grid.css';
 
 /**
  * This is the view for the front page of the app.

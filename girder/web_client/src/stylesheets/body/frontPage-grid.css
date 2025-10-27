@@ -1,0 +1,61 @@
+/* Grid layout for Tools section */
+.g-dashboard-tools {
+  background: #fff;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 8px 32px rgba(0,0,0,.06);
+  border: 1px solid rgba(33,150,243,.1);
+}
+
+.g-tools-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--data-dark);
+  margin: 0 0 30px 0;
+  text-align: center;
+}
+
+.g-tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.g-tool-card {
+  background: #f8f9fa;
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+  border: 1px solid rgba(33,150,243,.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.g-tool-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(33,150,243,.15);
+  border-color: var(--data-primary);
+}
+
+.g-tool-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.g-tool-content .g-tool-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--data-dark);
+  margin: 0 0 15px 0;
+}
+
+.g-tool-content .g-tool-description {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.5;
+  margin: 0;
+}
+
