@@ -192,7 +192,7 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: ['.js'],
+        extensions: ['.js', '.styl'],
         symlinks: false,
         alias: {
             jquery: require.resolve('jquery'), // ensure that all plugins use the same "jquery"
