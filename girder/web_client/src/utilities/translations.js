@@ -166,7 +166,7 @@ const englishTranslations = {
     'Paraview': 'Paraview',
     'Scientific visualization and data analysis platform': 'Scientific visualization and data analysis platform',
     'LGE': 'LGE',
-    'LGE Segmentation Tool': 'LGE Segmentation Tool',
+    'LGE Segmentation & Analysis Tool': 'LGE Segmentation & Analysis Tool',
     
     // MDS-Data Landing Page
     'MDS-Data brings together advanced data science and multimodal analytics for comprehensive data management and visualization': 'MDS-Data brings together advanced data science and multimodal analytics for comprehensive data management and visualization',

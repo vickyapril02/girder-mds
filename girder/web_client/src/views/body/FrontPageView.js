@@ -239,7 +239,7 @@ var FrontPageView = View.extend({
                                 <div class="g-tool-icon">🔒</div>
                                 <div class="g-tool-content">
                                     <h4 class="g-tool-title">${translate('LGE')}</h4>
-                                    <p class="g-tool-description">${translate('LGE Segmentation Tool')}</p>
+                                    <p class="g-tool-description">${translate('LGE Segmentation & Analysis Tool')}</p>
                                 </div>
                             </div>
                         </div>
