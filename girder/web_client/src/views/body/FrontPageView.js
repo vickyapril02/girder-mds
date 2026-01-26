@@ -243,6 +243,14 @@ var FrontPageView = View.extend({
                                     <p class="g-tool-description">${translate('LGE Segmentation & Analysis Tool')}</p>
                                 </div>
                             </div>
+                            
+                            <div class="g-tool-card" onclick="window.open('/la-qc', '_blank')">
+                                <div class="g-tool-icon">🫀</div>
+                                <div class="g-tool-content">
+                                    <h4 class="g-tool-title">${translate('LA QC Interface')}</h4>
+                                    <p class="g-tool-description">${translate('Quality Interface for Left Artrium segmentation')}</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -167,6 +167,8 @@ const englishTranslations = {
     'Scientific visualization and data analysis platform': 'Scientific visualization and data analysis platform',
     'LGE': 'LGE',
     'LGE Segmentation & Analysis Tool': 'LGE Segmentation & Analysis Tool',
+    'LA QC Interface': 'LA QC Interface',
+    'Quality Interface for Left Artrium segmentation': 'Quality Interface for Left Artrium segmentation',
     
     // MDS-Data Landing Page
     'MDS-Data brings together advanced data science and multimodal analytics for comprehensive data management and visualization': 'MDS-Data brings together advanced data science and multimodal analytics for comprehensive data management and visualization',
