@@ -244,7 +244,7 @@ var FrontPageView = View.extend({
                                 </div>
                             </div>
                             
-                            <div class="g-tool-card" onclick="window.open('/tools/lasegqc/', '_blank')">
+                            <div class="g-tool-card" onclick="window.open('/la-qc', '_blank')">
                                 <div class="g-tool-icon">🫀</div>
                                 <div class="g-tool-content">
                                     <h4 class="g-tool-title">${translate('LA QC Interface')}</h4>
