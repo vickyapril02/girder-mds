@@ -251,6 +251,16 @@ var FrontPageView = View.extend({
                                     <p class="g-tool-description">${translate('Quality Interface for Left Artrium segmentation')}</p>
                                 </div>
                             </div>
+
+                            <div class="g-tool-card" onclick="window.open('/tools/musicardio/', '_blank')">
+                                <div class="g-tool-icon">
+                                    <img src="/static/img/MSC_icon.svg" alt="MUSICardio icon" style="width:48px;height:48px;object-fit:contain;" />
+                                </div>
+                                <div class="g-tool-content">
+                                    <h4 class="g-tool-title">${translate('MUSICardio')}</h4>
+                                    <p class="g-tool-description">${translate('Multimodality platform for specific imaging in Cardiology')}</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
