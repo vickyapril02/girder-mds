@@ -187,6 +187,10 @@ module.exports = function (grunt) {
                         from: 'static/img/meditwin_partners.png',
                         to: grunt.config.get('builtPath'),
                         toType: 'dir'
+                    }, {
+                        from: 'static/img/MSC_icon.svg',
+                        to: grunt.config.get('builtPath'),
+                        toType: 'dir'
                     }])
                 ]
             }

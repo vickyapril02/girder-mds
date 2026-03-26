@@ -254,7 +254,7 @@ var FrontPageView = View.extend({
 
                             <div class="g-tool-card" onclick="window.open('/tools/musicardio/', '_blank')">
                                 <div class="g-tool-icon">
-                                    <img src="/static/img/MSC_icon.svg" alt="MUSICardio icon" style="width:48px;height:48px;object-fit:contain;" />
+                                    <img src="/static/built/MSC_icon.svg" alt="MUSICardio icon" style="width:48px;height:48px;object-fit:contain;" />
                                 </div>
                                 <div class="g-tool-content">
                                     <h4 class="g-tool-title">${translate('MUSICardio')}</h4>
