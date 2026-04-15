@@ -252,7 +252,7 @@ var FrontPageView = View.extend({
                                 </div>
                             </div>
 
-                            <div class="g-tool-card" onclick="window.open('/tools/musicardio/', '_blank')">
+                            <div class="g-tool-card" onclick="window.open('/musicardio/', '_blank')">
                                 <div class="g-tool-icon">
                                     <img src="/static/built/MSC_icon.svg" alt="MUSICardio icon" style="width:48px;height:48px;object-fit:contain;" />
                                 </div>
