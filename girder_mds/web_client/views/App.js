@@ -4,10 +4,10 @@ const eventStream = girder.utilities.eventStream;
 const { getCurrentUser } = girder.auth;
 const { wrap } = girder.utilities.PluginUtils;
 
-// Force MDS-Data branding (Girder 5 admin UI no longer edits these in the browser).
+// Force Phyba branding (Girder 5 admin UI no longer edits these in the browser).
 wrap(App, 'initialize', function (initialize, settings) {
     settings = settings || {};
-    settings.brandName = 'MDS-Data';
+    settings.brandName = 'Phyba';
     settings.bannerColor = settings.bannerColor || '#4CAF50';
     initialize.call(this, settings);
 });

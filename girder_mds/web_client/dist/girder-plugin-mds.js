@@ -380,7 +380,7 @@ Object.assign(r.prototype.events, {
         </div>
     `), this;
 }, s(r, "initialize", function(e, t) {
-	t ||= {}, t.brandName = t.brandName || "MDS-Data", e.call(this, t), a() ? document.body.classList.remove("g-landing-page-active") : document.body.classList.add("g-landing-page-active"), this.languageChangeHandler = () => {
+	t ||= {}, t.brandName = t.brandName || "Phyba", e.call(this, t), a() ? document.body.classList.remove("g-landing-page-active") : document.body.classList.add("g-landing-page-active"), this.languageChangeHandler = () => {
 		this.render();
 	}, window.addEventListener("languageChanged", this.languageChangeHandler), this.loginHandler = () => {
 		this.render();
@@ -491,13 +491,13 @@ Object.assign(r.prototype.events, {
 //#region views/HeaderView.js
 var g = girder.views.layout.HeaderView, { wrap: _ } = girder.utilities.PluginUtils;
 _(g, "initialize", function(e, t) {
-	t ||= {}, t.brandName = t.brandName || "MDS-Data", t.bannerColor = t.bannerColor || "#4CAF50", e.call(this, t);
+	t ||= {}, t.brandName = t.brandName || "Phyba", t.bannerColor = t.bannerColor || "#4CAF50", e.call(this, t);
 });
 //#endregion
 //#region views/App.js
 var v = girder.views.App, y = girder.router, b = girder.utilities.eventStream, { getCurrentUser: x } = girder.auth, { wrap: S } = girder.utilities.PluginUtils;
 S(v, "initialize", function(e, t) {
-	t ||= {}, t.brandName = "MDS-Data", t.bannerColor = t.bannerColor || "#4CAF50", e.call(this, t);
+	t ||= {}, t.brandName = "Phyba", t.bannerColor = t.bannerColor || "#4CAF50", e.call(this, t);
 }), S(v, "login", function() {
 	x() ? (b.open(), window.location.reload()) : y.navigate("/", { trigger: !0 });
 });

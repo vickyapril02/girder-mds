@@ -223,7 +223,7 @@ FrontPageView.prototype.renderLoggedInDashboard = function () {
 
 wrap(FrontPageView, 'initialize', function (initialize, settings) {
     settings = settings || {};
-    settings.brandName = settings.brandName || 'MDS-Data';
+    settings.brandName = settings.brandName || 'Phyba';
 
     initialize.call(this, settings);
 
