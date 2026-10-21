@@ -29,6 +29,7 @@
 
   .g-landing-header
     display flex
+    flex-wrap wrap
     justify-content space-between
     align-items center
     margin-bottom 40px
@@ -53,7 +54,28 @@
         font-weight 600
         color var(--medical-dark)
         line-height 1.4
-        max-width 600px
+        max-width 800px
+
+        .g-team-name
+          font-size 44px
+          font-weight 400
+          color var(--medical-primary)
+          line-height 1.1
+
+        .g-team-tagline
+          font-size 20px
+          font-weight 400
+          color #555
+          margin-top 4px
+
+    .g-team-goals
+      flex-basis 100%
+      font-size 17px
+      color #555
+      line-height 1.6
+      margin 20px 0 0 0
+      padding-top 20px
+      border-top 1px solid #eee
 
     .g-auth
       display flex
@@ -578,11 +600,21 @@
               color var(--medical-dark)
 
         .g-company-info
+          .g-background-title
+            font-size 32px
+            font-weight 400
+            color var(--medical-dark)
+            margin 0 0 16px 0
+
           p
             font-size 18px
             line-height 1.7
             color #555
             margin-bottom 30px
+
+            a
+              color var(--medical-primary)
+              text-decoration underline
 
           .g-contact-info
             background #f8f9fa
@@ -597,6 +629,60 @@
 
               strong
                 color var(--medical-primary)
+
+        .g-objectives-grid
+          list-style none
+          margin 0
+          padding 0
+          display grid
+          grid-template-columns repeat(auto-fit, minmax(220px, 1fr))
+          gap 16px
+
+          .g-objective
+            background var(--medical-light)
+            border-left 4px solid var(--medical-primary)
+            border-radius 8px
+            padding 18px 20px
+            font-size 17px
+            font-weight 600
+            color var(--medical-dark)
+
+        &.g-teams
+          color #555
+
+          .g-teams-intro
+            font-size 18px
+            line-height 1.6
+            margin 0 0 24px 0
+
+          .g-teams-heading
+            font-size 18px
+            font-weight 700
+            color var(--medical-primary)
+            margin 24px 0 10px 0
+
+          .g-teams-list
+            margin 0
+            padding-left 20px
+
+            li
+              font-size 16px
+              line-height 1.6
+              margin-bottom 4px
+
+          .g-teams-centers
+            display grid
+            grid-template-columns 1fr 1fr
+            gap 30px
+            margin-top 10px
+
+            @media (max-width: 768px)
+              grid-template-columns 1fr
+
+          .g-teams-center
+            background var(--medical-light)
+            border-radius 12px
+            padding 4px 24px 20px 24px
 
 // Dashboard styles for logged-in users
 .g-dashboard

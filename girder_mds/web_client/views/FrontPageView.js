@@ -10,6 +10,89 @@ const { wrap } = girder.utilities.PluginUtils;
 
 const mscIconUrl = '/plugin_static/mds/MSC_icon.svg';
 
+const RESEARCH_OBJECTIVES = [
+    'Computational cardiology',
+    'Multimodal data science',
+    'Digital twins',
+    'Biophysical modelling',
+    'Artificial intelligence methods',
+];
+
+const TEAM_LEADS = [
+    'Maxime Sermesant, research director, Inria',
+    'Hubert Cochet, co-lead, PU PH Radiologie, CHU / UBx, Pôle Technologies pour la Santé director',
+];
+
+const TEAM_ASSISTANTS = [
+    'Fabienne Cuyollaa (Centre Inria de l’Université de Bordeaux)',
+    'Nathalie Nordmann (local support Centre Inria d’Université Côte d’Azur)',
+];
+
+const TEAM_CENTERS = [
+    {
+        name: 'IHU Liryc (Centre Inria de l’Université de Bordeaux)',
+        members: [
+            'Buntheng Ly, PostDoc (Fondation Bordeaux Université)',
+            'Elena Van-Breukelen-Garcia, Engineer (Fondation Bordeaux Université)',
+            'Florent Collot, Engineer (Université de Bordeaux)',
+            'Gabriel Husak, Engineer (Université de Bordeaux)',
+            'Jairo Rodriguez-Padilla, PostDoc (Fondation Bordeaux Université)',
+            'Kevin Bony, Radiology Technician (CHU de Bordeaux)',
+            'Ludovic Germain, Radiology Technician (CHU de Bordeaux)',
+            'Mathilde Merle, Engineer (Université de Bordeaux)',
+            'Olivier Baris, Radiology Technician (CHU de Bordeaux)',
+            'Sara Zein, Engineer (Université de Bordeaux)',
+            'Vigneshwar Gurunathan, Engineer (Fondation Bordeaux Université)',
+        ],
+    },
+    {
+        name: 'Sophia Antipolis (Centre Inria d’Université Côte d’Azur)',
+        members: [
+            'Adrien Tchuem Tchuente, PhD student (Inria)',
+            'Antoine Chan-Lock, Engineer (Inria)',
+            'Camilla Ferrario, PhD student (Inria)',
+            'Evariste Njomgue-Fotso, PhD student (Inria)',
+            'Gaëtan Desrues, Engineer (Inria)',
+            'Maelis Morier, PhD student (Inria)',
+            'Nicolas Cedilnik, Engineer (Inria)',
+            'Nicolas Drettakis, PhD student (Inria)',
+            'Rafael Silva, PhD student (Inria)',
+            'Margot Malis, MSc student (Inria)',
+        ],
+    },
+];
+
+const galleryUrl = '/plugin_static/mds/gallery';
+
+const GALLERY_ITEMS = [
+    { file: 'left-atrium-flux.mp4', caption: 'Left atrium flux in a heart' },
+    { file: 'electromechanical-simulation.mp4', caption: 'Electromechanical simulation' },
+    { file: 'segmentation-of-atrium.mp4', caption: 'Segmentation of atrium' },
+    { file: 'electrophysiology-simulation.mp4', caption: 'Electrophysiology simulation' },
+    { file: 'musicardio.png', caption: 'MUSICardio' },
+    { file: 'team-bordeaux.jpg', caption: 'Team Bordeaux' },
+];
+
+// The track is rendered twice so the CSS scroll animation can loop without a visible jump.
+function renderGalleryItems(isDuplicate) {
+    return GALLERY_ITEMS.map(({ file, caption }) => {
+        const src = `${galleryUrl}/${file}`;
+        const media = file.endsWith('.mp4')
+            ? `<video src="${src}" autoplay muted loop playsinline preload="auto"></video>`
+            : `<img src="${src}" alt="${translate(caption)}" />`;
+        return `
+            <figure class="g-gallery-item"${isDuplicate ? ' aria-hidden="true"' : ''}>
+                <div class="g-gallery-media">${media}</div>
+                <figcaption>${translate(caption)}</figcaption>
+            </figure>
+        `;
+    }).join('');
+}
+
+function renderMemberList(members) {
+    return `<ul class="g-teams-list">${members.map((member) => `<li>${member}</li>`).join('')}</ul>`;
+}
+
 Object.assign(FrontPageView.prototype.events, {
     'click .g-explore-platform-btn': function () {
         events.trigger('g:loginUi');
@@ -29,8 +112,8 @@ FrontPageView.prototype.renderLoggedInDashboard = function () {
                 <div class="g-welcome-section">
                     <div class="g-welcome-icon">📊</div>
                     <div class="g-welcome-content">
-                        <h1 class="g-welcome-title">${translate('Welcome to MDS-Data')}</h1>
-                        <p class="g-welcome-subtitle">${translate('Your data science platform')}</p>
+                        <h1 class="g-welcome-title">${translate('Phyba Data')}</h1>
+                        <p class="g-welcome-subtitle">${translate('Your Data platform')}</p>
                         <p class="g-user-greeting">${translate('Hello')}, <strong>${currentUser.get('firstName') || currentUser.get('login')}</strong>!</p>
                     </div>
                 </div>
@@ -121,6 +204,16 @@ FrontPageView.prototype.renderLoggedInDashboard = function () {
                         </div>
                     </div>
                 </div>
+
+                <div class="g-dashboard-gallery">
+                    <h3 class="g-tools-title">${translate('Gallery')}</h3>
+                    <div class="g-gallery-viewport">
+                        <div class="g-gallery-track">
+                            ${renderGalleryItems(false)}
+                            ${renderGalleryItems(true)}
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     `);
@@ -169,19 +262,20 @@ wrap(FrontPageView, 'render', function () {
         <div class="g-landing">
             <div class="g-landing-header">
                 <div class="g-brand">
-                    <div class="g-logo">
-                        <div class="g-data-logo">📊</div>
+                    <div class="g-title">
+                        <div class="g-team-name">Phyba</div>
+                        <div class="g-team-tagline">${translate('Physiology-based Approaches in Computational Cardiology')}</div>
                     </div>
-                    <div class="g-title">${translate('MDS-Data brings together advanced data science and multimodal analytics for comprehensive data management and visualization')}</div>
                 </div>
                 <div class="g-auth">
                     <button class="g-link g-login-link">${translate('Login')}</button>
                     <button class="g-link g-register-link">${translate('Sign up')}</button>
                 </div>
+                <p class="g-team-goals">${translate('The goals of the Phyba team are to propose new methods in computational cardiology through the analysis of multimodal clinical data and the development of personalized digital twins. We aim at improving clinical prevention, diagnosis, therapy and prognosis in cardiovascular diseases.')}</p>
             </div>
 
             <div class="g-landing-hero">
-                <div class="g-hero-title">${translate('MDS-Data Platform')}</div>
+                <div class="g-hero-title">${translate('Phyba Data Platform')}</div>
                 <div class="g-hero-subtitle">${translate('Building the future of data science through multimodal analytics')}</div>
                 <div class="g-hero-cta">
                     <button class="g-cta-btn g-primary g-explore-platform-btn">
@@ -201,51 +295,61 @@ wrap(FrontPageView, 'render', function () {
                     </div>
                     <div class="g-section-content">
                         <div class="g-company-info">
-                            <p>${translate('MDS-Data is developed by a team of data scientists, software engineers, and researchers dedicated to advancing data science through innovative technology. We are committed to providing cutting-edge solutions that accelerate research and enable breakthrough discoveries.')}</p>
-                            <p>${translate('We manage the data science platform that enables seamless collaboration between research teams and institutions, providing powerful and efficient data handling for scientific research and analysis.')}</p>
+                            <h3 class="g-background-title">${translate('Our background')}</h3>
+                            <p>
+                                The Phyba team is built on 25 years of research in cardiac modelling and data science at
+                                <a href="https://www.inria.fr/en" target="_blank" rel="noopener">Inria</a> (Sophia Antipolis and Bordeaux) and
+                                <a href="https://www.ihu-liryc.fr/en/" target="_blank" rel="noopener">Liryc institute</a> (Pessac), in strong collaboration with
+                                <a href="https://www.chu-bordeaux.fr/" target="_blank" rel="noopener">Bordeaux University Hospital</a>.
+                                Developing personalized cardiac models includes numerous challenges: complex multi-physics multi-scale phenomena,
+                                important variabilities between patients and within patients (adaptation, remodelling), and the resulting equations
+                                are computationally demanding. In addition, clinical data is usually sparse and noisy. The originality of our approach
+                                is to start from the patient data in order to define model complexity and parameter estimation procedures.
+                            </p>
+                            <p>
+                                In parallel, the pioneering research on cardiac arrhythmias performed in Bordeaux enabled to understand the origin
+                                of atrial fibrillation and to propose catheter ablation as a therapy. The creation of the Liryc institute in 2011
+                                allowed to develop translational research looking at all scales and aspects of cardiac arrhythmias, as well as to
+                                strengthen the links with Inria, a founding member of IHU Liryc. This collaboration proposed image integration with
+                                unprecedented details for the understanding of arrhythmia mechanisms and the guidance of cardiac interventions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-                            <div class="g-team-section">
-                                <h3 class="g-team-title">${translate('Our Team')}</h3>
-                                <div class="g-team-grid">
-                                    <div class="g-team-member" onclick="window.open('https://www.example.com/team-lead', '_blank')">
-                                        <div class="g-team-member-info">
-                                            <div class="g-team-member-name">${translate('Data Science Lead')}</div>
-                                            <div class="g-team-member-role">${translate('Research Director')}</div>
-                                            <div class="g-team-member-link">${translate('View Profile')} →</div>
-                                        </div>
-                                    </div>
-                                    <div class="g-team-member">
-                                        <div class="g-team-member-info">
-                                            <div class="g-team-member-name">${translate('Research Director')}</div>
-                                            <div class="g-team-member-role">${translate('Team Member')}</div>
-                                        </div>
-                                    </div>
-                                    <div class="g-team-member">
-                                        <div class="g-team-member-info">
-                                            <div class="g-team-member-name">${translate('Team Member')}</div>
-                                            <div class="g-team-member-role">${translate('Team Member')}</div>
-                                        </div>
-                                    </div>
-                                    <div class="g-team-member">
-                                        <div class="g-team-member-info">
-                                            <div class="g-team-member-name">${translate('Team Member')}</div>
-                                            <div class="g-team-member-role">${translate('Team Member')}</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="g-section">
+                    <div class="g-section-header">
+                        <div class="g-section-icon">🎯</div>
+                        <div class="g-section-title">${translate('Our main research objectives')}</div>
+                    </div>
+                    <div class="g-section-content">
+                        <ul class="g-objectives-grid">
+                            ${RESEARCH_OBJECTIVES.map((objective) => `<li class="g-objective">${translate(objective)}</li>`).join('')}
+                        </ul>
+                    </div>
+                </div>
 
-                            <div class="g-contact-info">
-                                <div class="g-contact-item">
-                                    <strong>${translate('Contact:')}</strong> contact@mds-data.org
+                <div class="g-section">
+                    <div class="g-section-header">
+                        <div class="g-section-icon">👥</div>
+                        <div class="g-section-title">${translate('Teams')}</div>
+                    </div>
+                    <div class="g-section-content g-teams">
+                        <p class="g-teams-intro">${translate('Our Phyba team is bi-localized between Sophia Antipolis and IHU LIRYC in Pessac.')}</p>
+
+                        <h4 class="g-teams-heading">${translate('Lead')}</h4>
+                        ${renderMemberList(TEAM_LEADS)}
+
+                        <h4 class="g-teams-heading">${translate('Team Assistant')}</h4>
+                        ${renderMemberList(TEAM_ASSISTANTS)}
+
+                        <div class="g-teams-centers">
+                            ${TEAM_CENTERS.map((center) => `
+                                <div class="g-teams-center">
+                                    <h4 class="g-teams-heading">${center.name}</h4>
+                                    ${renderMemberList(center.members)}
                                 </div>
-                                <div class="g-contact-item">
-                                    <strong>${translate('Institution:')}</strong> Data Science Research Center
-                                </div>
-                                <div class="g-contact-item">
-                                    <strong>${translate('Location:')}</strong> Research Center
-                                </div>
-                            </div>
+                            `).join('')}
                         </div>
                     </div>
                 </div>
