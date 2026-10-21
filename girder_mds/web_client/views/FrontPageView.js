@@ -70,7 +70,6 @@ const GALLERY_ITEMS = [
     { file: 'segmentation-of-atrium.mp4', caption: 'Segmentation of atrium' },
     { file: 'electrophysiology-simulation.mp4', caption: 'Electrophysiology simulation' },
     { file: 'musicardio.png', caption: 'MUSICardio' },
-    { file: 'team-bordeaux.jpg', caption: 'Team Bordeaux' },
 ];
 
 // The track is rendered twice so the CSS scroll animation can loop without a visible jump.

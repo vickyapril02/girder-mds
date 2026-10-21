@@ -239,10 +239,6 @@ var r = girder.views.body.FrontPageView, i = girder.events, { getCurrentUser: a 
 	{
 		file: "musicardio.png",
 		caption: "MUSICardio"
-	},
-	{
-		file: "team-bordeaux.jpg",
-		caption: "Team Bordeaux"
 	}
 ];
 function m(e) {
